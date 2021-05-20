@@ -1,27 +1,48 @@
 @extends('layouts.app')
 
 @section('content')
-<main class="sm:container sm:mx-auto sm:mt-10">
-    <div class="w-full sm:px-6">
+    <section class="h-screen flex justify-center items-center" style="background-image: url({{ asset('/assets/one.jpg') }})">
+        <p class="font-semibold text-white text-6xl" id="bebas-neue"> Let's Get You Home </p>
+    </section>
 
-        @if (session('status'))
-            <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
+    <section>
+        <div class="flex h-36 items-center justify-center">
+            <p class="font-semibold text-white text-4xl"> Quick Search</p>
+        </div>
+        <form action="">
 
-        <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
+        </form>
+    </section>
 
-            <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                Dashboard
-            </header>
+    <section class="h-screen" style="background-image: url({{ asset('/assets/two.jpg') }})">
+        <div class="flex justify-center items-center">
+            <p class="font-bold text-white text-5xl"> FOR SALE!</p>
+        </div>
+    </section>
 
-            <div class="w-full p-6">
-                <p class="text-gray-700">
-                    You are logged in!
-                </p>
-            </div>
-        </section>
-    </div>
-</main>
+    <section class="flex items-center justify-center">
+        <div>
+            <img src="" alt="">
+        </div>
+        <div>
+            <p class="font-semibold text-3xl"> AGENT'S NOTE </p>
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui debitis beatae provident fugit voluptatibus? Atque iusto quidem consectetur distinctio dignissimos, architecto tenetur! Alias repudiandae dolores aliquid laboriosam laborum distinctio accusantium? </p>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-3">
+        <div>
+            <img src="" alt="">
+            <p class="text-gray"> Ajah | Lagos </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="flex items-center justify-center">
+            <p class="text-3xl"> Send me a message</p>
+        </div>
+        <div>
+            <form action=""></form>
+        </div>
+    </section>
 @endsection

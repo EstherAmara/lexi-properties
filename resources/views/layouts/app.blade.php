@@ -11,13 +11,18 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
-        <header class="bg-blue-900 py-6">
+        <header class="absolute bg-transparent mt-20 py-6 w-full">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
@@ -45,7 +50,23 @@
             </div>
         </header>
 
-        @yield('content')
+        <main>
+            @yield('content')
+        </main>
+
+        <footer>
+            <div class="flex justify-between">
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </footer>
     </div>
 </body>
 </html>
