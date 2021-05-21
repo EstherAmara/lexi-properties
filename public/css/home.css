@@ -1,3 +1,48 @@
-#bebas-neue {
+.gent-note {
+    border-left: 1px solid #1c1c1c;
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 25px;
+    padding: .5em 2.5em;
+}
+
+.bebas-neue {
     font-family: 'Bebas Neue', cursive;
+}
+
+.bg-green {
+    background-color: #38540A;
+}
+.bg-ivory {
+    background-color: #a89087;
+}
+.bg-misty-blue {
+    background-color: #2F5061;
+}
+.bg-peach {
+    background-color: #F75C66;
+}
+.bg-teal {
+    background-color: #4297A0;
+}
+
+.box-shadow {
+    box-shadow: 1px 1px 6px 0px lightgrey;
+}
+
+.open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.home {
+    font-size: 4.5rem;
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 3px gray;
+}
+.t-shadow {
+    text-shadow: 4px 0px 3px #565656;
+}
+.active {
+    color: #4297A0;
+    text-shadow: none;
 }

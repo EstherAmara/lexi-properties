@@ -12,6 +12,11 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css" rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
@@ -19,35 +24,23 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
-        <header class="absolute bg-transparent mt-20 py-6 w-full">
-            <div class="container mx-auto flex justify-between items-center px-6">
-                <div>
-                    <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-                <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
-                    @guest
-                        <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        @if (Route::has('register'))
-                            <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        @endif
-                    @else
-                        <span>{{ Auth::user()->name }}</span>
+        <header class="absolute mt-14 w-full">
+            <nav class="flex font-semibold justify-between mx-auto open-sans p-6 space-x-4 text-white text-xl sm:text-base w-2/3">
+                <a href="" class="t-shadow"> Mortgage Plans </a>
 
-                        <a href="{{ route('logout') }}"
-                           class="no-underline hover:underline"
-                           onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                            {{ csrf_field() }}
-                        </form>
-                    @endguest
-                </nav>
-            </div>
+                <a href="" class="t-shadow"> About Me </a>
+
+                <a href="{{ url('/') }}" class="t-shadow @if(Request::is('/')){{'active'}}@endif"> Home </a>
+
+                <a href="" class="t-shadow"> Land Banking Investment </a>
+
+                <a href="" class="t-shadow"> Contact Me </a>
+            </nav>
         </header>
 
         <main>
@@ -55,16 +48,29 @@
         </main>
 
         <footer>
-            <div class="flex justify-between">
-                <div>
-
-                </div>
-                <div>
-
+            <div class="bg-ivory py-7">
+                <div class=" flex justify-between mx-auto w-2/3">
+                    <div class="flex text-lg text-gray-200 space-x-5">
+                        <i class="border fa fa-facebook flex h-8 items-center justify-center rounded-full text-center w-8"></i>
+                        <i class="border fa fa-twitter flex h-8 items-center justify-center rounded-full text-center w-8"></i>
+                        <i class="border fa fa-instagram flex h-8 items-center justify-center rounded-full text-center w-8"></i>
+                    </div>
+                    <div>
+                        <form action="#" class="">
+                            <div class="border flex items-center px-2 py-1 rounded space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5" fill="none" viewBox="0 0 24 24" stroke="#d2d6dc">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                  </svg>
+                                <input type="text" class="bg-transparent focus:outline-none placeholder-gray-300" name="search" placeholder="Search">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div>
 
+            <div class="bg-misty-blue py-20 text-center text-md">
+                <p class="text-white"> Lexi Properties, Lagos State, Nigeria </p>
+                <p class="mt-3 text-white"> &copy; {{ now()->year }} | All rights reserved | Designed with &hearts; by Esthere </p>
             </div>
         </footer>
     </div>
