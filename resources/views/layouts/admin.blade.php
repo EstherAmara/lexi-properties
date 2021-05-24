@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 h-screen antialiased leading-none font-sans">
+    <div id="app" class="h-full">
+        <header class="bg-white duration-200 ease-in-out fixed h-full inset-y-0 left-0 lg:relative lg:translate-x-0 px-7 py-7 sidebar space-y-6 text-sm transform transition w-64 z-40 -translate-x-full">
+            <nav class="flex flex-1 flex-col font-bold h-full sidebar space-y-2 text-gray-500">
+                <span class="mb-8 mt-3 self-center"><a href="{{ url('/') }}" class="pattaya text-teal text-4xl">
+                    Lexi <br> Properties
+                </a></span>
+                <a href="{{ url('/admin') }}" class="hover:bg-gray-200 p-4 rounded @if(Request::is('admin')){{'active'}} @endif"> Dashboard </a>
+
+                <a href="" class="hover:bg-gray-500 p-4 rounded @if (Request::is('list-property')){{ 'active' }}@endif"> List Property </a>
+
+                <a href="{{ url('/') }}" class="p-4 rounded @if(Request::is('/')){{'active'}}@endif"> Home </a>
+
+                <a href="" class="p-4 rounded"> Land Banking Investment </a>
+
+                <a href="" class="p-4 rounded"> Contacts </a>
+            </nav>
+        </header>
+
+        <main class="flex-1">
+            @yield('content')
+        </main>
+    </div>
+</body>
+</html>

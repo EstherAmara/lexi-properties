@@ -1,0 +1,21 @@
+.active {
+    background: linear-gradient(45deg, #4297A0, #0db247);
+    color: white;
+    font-weight: bold;
+}
+
+.bg-ivory {
+    background-color: #F4EAE6;
+}
+
+.pattaya {
+    font-family: 'Pattaya', sans-serif;
+}
+
+.sidebar > a:hover {
+    background-color: #eee;
+}
+
+.text-teal {
+    color: #03989E;
+}
