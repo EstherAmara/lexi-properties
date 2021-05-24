@@ -30,7 +30,7 @@
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
         <header class="absolute mt-14 w-full">
-            <nav class="flex font-semibold justify-between mx-auto open-sans p-6 space-x-4 text-white text-xl sm:text-base w-2/3">
+            <nav class="flex font-semibold hver justify-between mx-auto open-sans p-6 space-x-4 text-white text-xl sm:text-base w-2/3">
                 <a href="" class="t-shadow"> Mortgage Plans </a>
 
                 <a href="" class="t-shadow"> About Me </a>

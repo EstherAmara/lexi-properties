@@ -48,6 +48,9 @@
         </header>
 
         <main class="flex-1">
+            <div>
+
+            </div>
             @yield('content')
         </main>
     </div>
