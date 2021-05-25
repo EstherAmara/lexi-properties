@@ -86,14 +86,68 @@
                 <p class="text-md"> <i class="fa fa-whatsapp font-semibold pr-2"></i> 0900 000 000 </p>
             </div>
             <div class="w-2/3">
-                <form action="">
+                <div class="bg-green-200 font-semibold hidden inline-flex items-center justify-between mb-3 p-3 rounded space-x-5 text-center text-green-600" id="greenAlert">
+                    <p> Your message was sent successfully </p>
+                    <span class="border-2 border-green-400 cursor-pointer px-1 py-0.5 rounded-full text-green-400 text-xs" id="close"><i class="fa fa-close"></i></span>
+                </div>
+                <form action="" id="main">
                     <input type="text" placeholder="Name" name="name" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
                     <input type="text" placeholder="Email" name="email" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
                     <input type="text" placeholder="Phone" name="phone" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
                     <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="block p-2 w-full"></textarea>
-                    <input type="submit" value="Search" class="bg-peach mt-4 pb-2.5 pt-2 px-8 rounded text-lg text-white">
+                    <input type="submit" value="Search" class="bg-peach cursor-pointer mt-4 pb-2.5 pt-2 px-8 rounded text-lg text-white">
                 </form>
             </div>
         </div>
     </section>
+    <script>
+
+        $(document).ready(function () {
+            // Listen to submit event on the <form> itself!
+                function getFormData($form) {
+                    var unindexed_array = $form.serializeArray();
+                    var indexed_array = {};
+
+                    $.map(unindexed_array, function(n, i){
+                        indexed_array[n['name']] = n['value'];
+                    });
+
+                    return indexed_array;
+                }
+
+            $('#main').submit(function (e) {
+
+                // Prevent form submission which refreshes page
+                e.preventDefault();
+
+                // Serialize data
+                var $form = $(this);
+                var formData = getFormData($form);
+
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: `{{ url('/contact') }}`,
+                    method: 'POST',
+                    type: 'POST',
+                    data: {formData},
+                    success: function(data) {
+                        $('#main')[0].reset();
+                        $('#greenAlert').removeClass('hidden');
+                    },
+                    error: function(xmlHttpRequest, status, errorThrown) {
+                        alert(errorThrown);
+                        console.log('error', errorThrown);
+                    }
+                })
+
+            });
+        });
+
+        $('#greenAlert').click( function(e) {
+            $('#greenAlert').addClass('hidden');
+        })
+
+    </script>
 @endsection

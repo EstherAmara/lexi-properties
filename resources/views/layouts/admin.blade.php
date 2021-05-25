@@ -12,6 +12,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- Datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -29,7 +31,7 @@
 
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
-    <div id="app" class="h-full">
+    <div id="app" class="h-full lg:flex relative">
         <header class="bg-white duration-200 ease-in-out fixed h-full inset-y-0 left-0 lg:relative lg:translate-x-0 px-7 py-7 sidebar space-y-6 text-sm transform transition w-64 z-40 -translate-x-full">
             <nav class="flex flex-1 flex-col font-bold h-full sidebar space-y-2 text-gray-500">
                 <span class="mb-8 mt-3 self-center"><a href="{{ url('/') }}" class="pattaya text-teal text-4xl">
@@ -43,16 +45,23 @@
 
                 <a href="" class="p-4 rounded"> Land Banking Investment </a>
 
-                <a href="" class="p-4 rounded"> Contacts </a>
+                <a href="{{ url('/admin/contacts') }}" class="p-4 rounded @if(Request::segment(2) == ('contacts')){{'active'}}@endif"> Contacts </a>
             </nav>
         </header>
 
-        <main class="flex-1">
-            <div>
-
-            </div>
+        <main class="flex-1 p-8">
             @yield('content')
         </main>
     </div>
+
+    <!-- Datatable JS -->
+    <script src="{{ asset('js/jquery-slim.min.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $('#dataTable').DataTable({
+            "order": [],
+        })
+    </script>
 </body>
 </html>
