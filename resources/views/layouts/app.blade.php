@@ -38,7 +38,7 @@
 
                 <a href="{{ url('/') }}" class="t-shadow @if(Request::is('/')){{'active'}}@endif"> Home </a>
 
-                <a href="" class="t-shadow"> Land Banking Investment </a>
+                <a href="{{ url('/land-banking-investment') }}" class="t-shadow @if(Request::is('land-banking-investment')){{ 'active' }}@endif"> Land Banking Investment </a>
 
                 <a href="" class="t-shadow"> Contact Me </a>
             </nav>

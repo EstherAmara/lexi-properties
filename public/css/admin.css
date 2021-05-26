@@ -16,6 +16,78 @@
     background-color: #eee;
 }
 
+
+table.dataTable.no-footer{
+    /* border: 1px solid #dee2e6; */
+    border-radius: 5px;
+    border-bottom: none;
+}
+table.dataTable thead th {
+    border-bottom: none;
+    color: white;
+    padding: 25px 10px;
+    background-color: #049e9e;
+}
+table.dataTable tbody tr.odd {
+    background-color: #F4F5F7;
+}
+table.dataTable tbody td {
+    color: #5c6662; /*#dee2e6*/
+    font-size: 14px;
+    padding: 20px 10px;
+    border-top: 1px solid #dee2e6;
+}
+/* table.dataTable tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+}
+table.dataTable tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+} */
+table.dataTable thead tr th:first-child {
+    border-top-left-radius: 5px;
+}
+table.dataTable thead tr th:last-child {
+    border-top-right-radius: 5px;
+}
+table.dataTable thead .sorting {
+    background-image: none;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+    margin-bottom: 15px;
+}
+.dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate {
+    margin-top: 10px;
+}
+.dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    color: #015252 !important;
+    font-size: 13px;
+    font-weight: 600;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: teal;
+    color: white !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    border: 1px solid teal;
+    color: teal;
+    background: white
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+    font-size: 13px;
+    color: #015252;
+    font-weight: 600;
+}
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input {
+    margin: 0px 10px;
+    border: 1px solid #418f8f;
+    border-radius: 3px;
+}
 .text-teal {
     color: #03989E;
+}
+.text-darkteal {
+    color: #077277;
 }

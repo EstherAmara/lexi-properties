@@ -87,8 +87,8 @@
             </div>
             <div class="w-2/3">
                 <div class="bg-green-200 font-semibold hidden inline-flex items-center justify-between mb-3 p-3 rounded space-x-5 text-center text-green-600" id="greenAlert">
-                    <p> Your message was sent successfully </p>
                     <span class="border-2 border-green-400 cursor-pointer px-1 py-0.5 rounded-full text-green-400 text-xs" id="close"><i class="fa fa-close"></i></span>
+                    <p> Your message was sent successfully </p>
                 </div>
                 <form action="" id="main">
                     <input type="text" placeholder="Name" name="name" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">

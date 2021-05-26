@@ -2,6 +2,10 @@
 
 @section('content')
 
+    <section class="text-teal font-bold mt-10 text-center text-4xl">
+        <p> Contacts </p>
+    </section>
+
     <section class="mt-10 text-smx">
         <table id="dataTable">
             <thead class="text-browngold text-left">

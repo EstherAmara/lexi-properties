@@ -21,4 +21,8 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function landBankingInvestment() {
+        return view('landBankingInvestment');
+    }
 }
