@@ -13,8 +13,16 @@ class AdminController extends Controller
     }
 
     public function contact() {
-        $contacts = Contacts::all();
+        $contacts = Contacts::orderby('created_at', 'desc')->get();
 
         return view('admin.contacts')->with(compact('contacts'));
+    }
+
+    public function newProperties() {
+        return view('admin.properties.newProperties');
+    }
+
+    public function properties() {
+        return view('admin.properties.properties');
     }
 }

@@ -39,7 +39,7 @@
                 </a></span>
                 <a href="{{ url('/admin') }}" class="hover:bg-gray-200 p-4 rounded @if(Request::is('admin')){{'active'}} @endif"> Dashboard </a>
 
-                <a href="" class="hover:bg-gray-500 p-4 rounded @if (Request::is('list-property')){{ 'active' }}@endif"> List Property </a>
+                <a href="{{ url('/admin/properties') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('properties')){{ 'active' }}@endif"> Properties </a>
 
                 <a href="{{ url('/') }}" class="p-4 rounded @if(Request::is('/')){{'active'}}@endif"> Home </a>
 

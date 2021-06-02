@@ -10,6 +10,11 @@ use App\Models\Contacts;
 
 class ContactsController extends Controller
 {
+
+    public function index() {
+        return view('contact');
+    }
+
     public function submitContactForm(Request $request) {
 
         $contact = new Contacts;

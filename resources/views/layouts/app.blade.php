@@ -32,15 +32,15 @@
     <div id="app">
         <header class="absolute mt-14 w-full">
             <nav class="flex font-semibold hver justify-between mx-auto open-sans p-6 space-x-4 text-white text-xl sm:text-base w-2/3">
-                <a href="" class="t-shadow"> Mortgage Plans </a>
+                <a href="" class="t-shadow"> Properties </a>
 
-                <a href="" class="t-shadow"> About Me </a>
+                <a href="" class="t-shadow"> About </a>
 
                 <a href="{{ url('/') }}" class="t-shadow @if(Request::is('/')){{'active'}}@endif"> Home </a>
 
                 <a href="{{ url('/land-banking-investment') }}" class="t-shadow @if(Request::is('land-banking-investment')){{ 'active' }}@endif"> Land Banking Investment </a>
 
-                <a href="" class="t-shadow"> Contact Me </a>
+                <a href="{{ url('/contact-me') }}" class="t-shadow @if(Request::is('contact-me')){{ 'active' }}@endif"> Contact </a>
             </nav>
         </header>
 

@@ -8,6 +8,20 @@
     background-color: #F4EAE6;
 }
 
+.box-shadow {
+    box-shadow: 1px 1px 6px 0px lightgrey;
+}
+
+.list:hover {
+    border: 1px solid #0b8c8c;
+    background-color: white;
+    color: #0b8c8c;
+    /* font-weight: bold; */
+    transition: 1s ease-in-out;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
 .pattaya {
     font-family: 'Pattaya', sans-serif;
 }
