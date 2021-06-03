@@ -25,4 +25,8 @@ class AdminController extends Controller
     public function properties() {
         return view('admin.properties.properties');
     }
+
+    public function singleProperties() {
+        return view('admin.properties.singleProperties');
+    }
 }

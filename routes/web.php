@@ -22,5 +22,8 @@ Route::get('/contact-me', [\App\Http\Controllers\ContactsController::class, 'ind
 
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/admin/contacts', [\App\Http\Controllers\AdminController::class, 'contact']);
+
 Route::get('/admin/properties', [\App\Http\Controllers\AdminController::class, 'properties']);
 Route::get('/admin/properties/new', [\App\Http\Controllers\AdminController::class, 'newProperties']);
+Route::get('/admin/properties/{id}', [\App\Http\Controllers\AdminController::class, 'singleProperties']);
+
