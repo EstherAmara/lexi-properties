@@ -12,6 +12,10 @@
     box-shadow: 1px 1px 6px 0px lightgrey;
 }
 
+.icon:hover i.fa {
+    color: white;
+}
+
 .list:hover {
     border: 1px solid #0b8c8c;
     background-color: white;
@@ -29,7 +33,6 @@
 .sidebar > a:hover {
     background-color: #eee;
 }
-
 
 table.dataTable.no-footer{
     /* border: 1px solid #dee2e6; */

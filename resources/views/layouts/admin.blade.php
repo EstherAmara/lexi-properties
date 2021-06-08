@@ -30,10 +30,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
 
 </head>
-<body class="bg-gray-100 h-screen antialiased leading-none font-sans">
-    <div id="app" class="h-full lg:flex relative">
-        <header class="bg-white duration-200 ease-in-out fixed h-full inset-y-0 left-0 lg:relative lg:translate-x-0 px-7 py-7 sidebar space-y-6 text-sm transform transition w-64 z-40 -translate-x-full">
-            <nav class="flex flex-1 flex-col font-bold h-full sidebar space-y-2 text-gray-500">
+
+<body class="bg-gray-100 antialiased leading-none font-sans">
+    <div class="lg:flex min-h-screen relative">
+
+        <header class="bg-white duration-200 ease-in-out fixed inset-y-0 left-0 lg:relative lg:translate-x-0 px-7 py-7 sidebar space-y-6 text-sm transform transition w-64 z-40 -translate-x-full">
+            <nav class="flex flex-1 flex-col font-bold h-screen sidebar space-y-2 text-gray-500">
                 <span class="mb-8 mt-3 self-center"><a href="{{ url('/') }}" class="pattaya text-teal text-4xl">
                     Lexi <br> Properties
                 </a></span>
@@ -50,6 +52,7 @@
         </header>
 
         <main class="flex-1 p-8">
+            @include('layouts.alert')
             @yield('content')
         </main>
     </div>
@@ -59,9 +62,20 @@
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
     <script>
+        console.log('hello');
         $('#dataTable').DataTable({
             "order": [],
-        })
+        });
+
+        const alertPopUp = document.getElementById('alert');
+
+            alertPopUp.addEventListener('click', removeAlertPopUp);
+
+            function removeAlertPopUp(e) {
+                if(e.target.tagName === 'SPAN' || e.target.tagName === 'I') {
+                    alertPopUp.classList.add('hidden')
+                }
+            }
     </script>
 </body>
 </html>

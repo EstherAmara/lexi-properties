@@ -21,9 +21,11 @@ Route::get('/land-banking-investment', [\App\Http\Controllers\HomeController::cl
 Route::get('/contact-me', [\App\Http\Controllers\ContactsController::class, 'index'])->name('contact');
 
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+
 Route::get('/admin/contacts', [\App\Http\Controllers\AdminController::class, 'contact']);
+Route::get('/admin/contacts/{id}', [\App\Http\Controllers\AdminController::class, 'singleContact']);
 
 Route::get('/admin/properties', [\App\Http\Controllers\AdminController::class, 'properties']);
-Route::get('/admin/properties/new', [\App\Http\Controllers\AdminController::class, 'newProperties']);
+Route::match(['get', 'post'], '/admin/properties/new', [\App\Http\Controllers\AdminController::class, 'newProperties']);
 Route::get('/admin/properties/{id}', [\App\Http\Controllers\AdminController::class, 'singleProperties']);
 

@@ -7,7 +7,8 @@
     </section>
 
     <section>
-        <form action="">
+        <form action="" enctype="multipart/form-data" method="POST">
+            @csrf
             <div class="gap-5 grid grid-cols-3 mt-10">
                 <div>
                     <label class="text-gray-600" for="title"> Title </label>
@@ -35,13 +36,33 @@
                 </div>
 
                 <div>
-                    <label class="text-gray-600" for="location"> State </label>
-                    <input type="text" name="location" id="location" class="block border mt-2 px-5 py-3 rounded-lg text-sm w-full">
+                    <label class="text-gray-600" for="state"> State </label>
+                    <input type="text" name="state" id="state" class="block border mt-2 px-5 py-3 rounded-lg text-sm w-full">
+                </div>
+
+                <div class="col-span-2">
+                    <label class="text-gray-600" for="proximity"> Proximity to choice proximity </label>
+                    <input type="text" name="proximity" id="location" class="block border mt-2 px-5 py-3 rounded-lg text-sm w-full">
+                </div>
+
+                <div>
+                    <label for="topography" class="text-gray-600"> Topography </label>
+                    <input type="text" name="topography" id="topography" class="block border mt-2 px-5 py-3 rounded-lg text-sm w-full">
                 </div>
 
                 <div class="col-span-3">
                     <label class="text-gray-600" for="description"> Description </label>
                     <textarea name="description" id="description" cols="30" rows="10" class="block border mt-2 px-5 py-3 rounded-lg text-sm w-full"></textarea>
+                </div>
+
+                <div class="col-span-3">
+                    <label class="text-gray-600" for="payment_plan"> Payment Plan </label>
+                    <textarea name="payment_plan" id="payment_plan" cols="30" rows="10" class="block border mt-2 px-5 py-3 rounded-lg text-sm w-full"></textarea>
+                </div>
+
+                <div class="col-span-3">
+                    <label class="text-gray-600" for="pictures"> Pictures </label>
+                    <input type="file" name="pictures" id="pictures" class="bg-white block border mt-2 px-5 py-3 rounded-lg ltext-sm w-full">
                 </div>
             </div>
             <div class="mt-5">
