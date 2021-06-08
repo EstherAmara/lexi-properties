@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Properties;
+
 class HomeController extends Controller
 {
     /**
@@ -17,9 +19,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('home');
+    public function index() {
+        $allProperties = Properties::latest()->paginate(9);
+
+        return view('home')->with(compact('allProperties'));
     }
 
     public function landBankingInvestment() {

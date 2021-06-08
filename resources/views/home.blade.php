@@ -51,30 +51,21 @@
             <a href="#" class="bg-teal px-6 py-2 rounded text-white"> View All Properties </a>
         </div>
         <div class="gap-4 grid grid-cols-3">
-            <div class="box-shadow">
-                <img src="{{ asset('/assets/three.jpg') }}" alt="" class="h-56 object-center object-cover w-full">
-                <p class="py-4 text-center text-gray text-gray-600"> Ajah | Lagos </p>
-            </div>
-            <div class="box-shadow">
-                <img src="{{ asset('/assets/four.jpg') }}" alt="" class="h-56 object-center object-cover w-full">
-                <p class="py-4 text-center text-gray text-gray-600"> Ajah | Lagos </p>
-            </div>
-            <div class="box-shadow">
-                <img src="{{ asset('/assets/one.jpg') }}" alt="" class="h-56 object-center object-cover w-full">
-                <p class="py-4 text-center text-gray text-gray-600"> Ajah | Lagos </p>
-            </div>
-            <div class="box-shadow">
-                <img src="{{ asset('/assets/five.jpg') }}" alt="" class="h-56 object-center object-cover w-full">
-                <p class="py-4 text-center text-gray text-gray-600"> Ajah | Lagos </p>
-            </div>
-            <div class="box-shadow">
-                <img src="{{ asset('/assets/two.jpg') }}" alt="" class="h-56 object-center object-cover w-full">
-                <p class="py-4 text-center text-gray text-gray-600"> Ajah | Lagos </p>
-            </div>
-            <div class="box-shadow">
-                <img src="{{ asset('/assets/four.jpg') }}" alt="" class="h-56 object-center object-cover w-full">
-                <p class="py-4 text-center text-gray text-gray-600"> Ajah | Lagos </p>
-            </div>
+            @foreach ($allProperties as $property)
+                <div class="bg-white box-shadow">
+                    <a href="{{ url('/admin/properties/single') }}">
+                        <img src="{{ asset($property->pictures) }}" alt="" class="h-52 object-center object-cover rounded-br-full w-full">
+                        <div class="px-3 py-2 text-gray-600 text-xs">
+                            <p class="text-sm font-bold"> {{ $property->title }} </p>
+                            <p class="py-2.5"> <i class="fa fa-map-marker"></i> {{ $property->city }}, {{ $property->state }} </p>
+                            <div class="flex justify-between">
+                                <p>{{ $property->measurement }}</p>
+                                <p>₦{{ $property->amount }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </section>
 

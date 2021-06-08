@@ -53,10 +53,10 @@ class AdminController extends Controller
 
             $image = $request->file('pictures');
             $name = Str::slug($request->pictures).'_'.time();
-            $folder = '/assets/images/uploads/';
-            $filePath = $name. '.' . $image->getClientOriginalExtension();
-            $image->move(public_path($folder), $filePath);
-            $property->pictures = $filePath;
+            $filePath = '/assets/images/uploads/';
+            $file = $name. '.' . $image->getClientOriginalExtension();
+            $image->move(public_path($filePath), $file);
+            $property->pictures = $filePath.$file;
 
             $property->save();
 
@@ -67,7 +67,8 @@ class AdminController extends Controller
     }
 
     public function properties() {
-        return view('admin.properties.properties');
+        $allProperties = Properties::latest()->get();
+        return view('admin.properties.properties')->with(compact('allProperties'));
     }
 
     public function singleContact() {
