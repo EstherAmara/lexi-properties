@@ -28,4 +28,10 @@ class HomeController extends Controller
     public function landBankingInvestment() {
         return view('landBankingInvestment');
     }
+
+    public function properties() {
+        $allProperties = Properties::all();
+
+        return view('properties')->with(compact('allProperties'));
+    }
 }

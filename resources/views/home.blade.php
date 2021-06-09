@@ -48,7 +48,7 @@
 
     <section class="mx-auto my-32 w-2/3">
         <div class="flex justify-end mb-2">
-            <a href="#" class="bg-teal px-6 py-2 rounded text-white"> View All Properties </a>
+            <a href="{{ url('/properties') }}" class="bg-teal px-6 py-2 rounded text-white"> View All Properties </a>
         </div>
         <div class="gap-4 grid grid-cols-3">
             @foreach ($allProperties as $property)

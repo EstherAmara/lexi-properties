@@ -19,6 +19,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::post('/contact', [\App\Http\Controllers\ContactsController::class, 'submitContactForm']);
 Route::get('/land-banking-investment', [\App\Http\Controllers\HomeController::class, 'landBankingInvestment']);
 Route::get('/contact-me', [\App\Http\Controllers\ContactsController::class, 'index'])->name('contact');
+Route::get('/properties', [\App\Http\Controllers\HomeController::class, 'properties'])->name('properties');
 
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 
