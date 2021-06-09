@@ -71,8 +71,10 @@ class AdminController extends Controller
         return view('admin.properties.properties')->with(compact('allProperties'));
     }
 
-    public function singleContact() {
-        return view('admin.contacts.singleContact');
+    public function singleContact($contact_id) {
+        $contact = Contacts::findOrFail($contact_id);
+
+        return view('admin.contacts.singleContact')->with(compact('contact'));
     }
 
     public function singleProperties() {
