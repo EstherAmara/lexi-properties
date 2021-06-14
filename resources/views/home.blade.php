@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="h-screen flex justify-center items-center" style="background-image: url({{ asset('/assets/one.jpg') }})">
+    <section class="h-screen flex justify-center items-center" style="background-image: url({{ asset('/assets/images/one.jpg') }})">
         <p class="font-semibold home text-white bebas-neue"> Let's Get You Home </p>
     </section>
 
     <section class="mx-auto my-32 w-2/3">
-        <div class="bg-center bg-cover bg-no-repeat flex h-44 items-center justify-center py-10 w-full" style="background-image: url({{ asset('/assets/two.jpg') }})">
+        <div class="bg-center bg-cover bg-no-repeat flex h-44 items-center justify-center py-10 w-full" style="background-image: url({{ asset('/assets/images/two.jpg') }})">
             <p class="font-semibold text-white text-5xl t-shadow"> - Quick Search - </p>
         </div>
         <form action="">
@@ -30,7 +30,7 @@
         </form>
     </section>
 
-    <section class="h-screen" style="background-image: url({{ asset('/assets/two.jpg') }})">
+    <section class="h-screen" style="background-image: url({{ asset('/assets/images/two.jpg') }})">
         <div class="flex h-full justify-center items-center">
             <p class="font-bold text-white text-5xl"> FOR SALE!</p>
         </div>
@@ -38,7 +38,7 @@
 
     <section class="flex items-center justify-center mx-auto my-32 space-x-10 w-2/3">
         <div class="h-96">
-            <img src="{{ asset('/assets/girl.jpg') }}" alt="" class="h-full object-center object-cover w-full">
+            <img src="{{ asset('/assets/images/girl.jpg') }}" alt="" class="h-full object-center object-cover w-full">
         </div>
         <div>
             <p class="mb-5 text-5xl bebas-neue"> AGENT'S NOTE </p>

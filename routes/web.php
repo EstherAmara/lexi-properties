@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,18 +19,19 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/contact', [\App\Http\Controllers\ContactsController::class, 'submitContactForm']);
-Route::get('/land-banking-investment', [\App\Http\Controllers\HomeController::class, 'landBankingInvestment']);
-Route::get('/contact-me', [\App\Http\Controllers\ContactsController::class, 'index'])->name('contact');
-Route::get('/properties', [\App\Http\Controllers\HomeController::class, 'properties'])->name('properties');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/contact', [ContactsController::class, 'submitContactForm']);
+Route::get('/land-banking-investment', [HomeController::class, 'landBankingInvestment']);
+Route::get('/contact-me', [ContactsController::class, 'index'])->name('contact');
+Route::get('/properties', [HomeController::class, 'properties'])->name('properties');
+Route::get('/properties/{slug}', [HomeController::class, 'singleProperty']);
 
-Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
-Route::get('/admin/contacts', [\App\Http\Controllers\AdminController::class, 'contact']);
-Route::get('/admin/contacts/{id}', [\App\Http\Controllers\AdminController::class, 'singleContact']);
+Route::get('/admin/contacts', [AdminController::class, 'contact']);
+Route::get('/admin/contacts/{id}', [AdminController::class, 'singleContact']);
 
-Route::get('/admin/properties', [\App\Http\Controllers\AdminController::class, 'properties']);
-Route::match(['get', 'post'], '/admin/properties/new', [\App\Http\Controllers\AdminController::class, 'newProperties']);
-Route::get('/admin/properties/{id}', [\App\Http\Controllers\AdminController::class, 'singleProperties']);
+Route::get('/admin/properties', [AdminController::class, 'properties']);
+Route::match(['get', 'post'], '/admin/properties/new', [AdminController::class, 'newProperties']);
+Route::get('/admin/properties/{slug}', [AdminController::class, 'singleProperties']);
 

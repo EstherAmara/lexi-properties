@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/contact.jpg') }}); background-color: rgba(1, 1, 1, 0.5); background-blend-mode: multiply">
+    <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/images/contact.jpg') }}); background-color: rgba(1, 1, 1, 0.5); background-blend-mode: multiply">
         <p class="font-semibold home text-white bebas-neue"> Contact us </p>
     </section>
 

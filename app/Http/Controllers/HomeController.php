@@ -26,12 +26,18 @@ class HomeController extends Controller
     }
 
     public function landBankingInvestment() {
-        return view('landBankingInvestment');
+        return view('home.landBankingInvestment');
     }
 
     public function properties() {
         $allProperties = Properties::all();
 
-        return view('properties')->with(compact('allProperties'));
+        return view('home.properties')->with(compact('allProperties'));
+    }
+
+    public function singleProperty($slug) {
+        $property = Properties::where('slug', $slug)->first();
+
+        return view('home.singleProperty')->with(compact('property'));
     }
 }

@@ -47,6 +47,7 @@ class AdminController extends Controller
             $property->measurement = $request->measurement;
             $property->payment_plan = $request->payment_plan;
             $property->proximity = $request->proximity;
+            $property->slug = implode('-', explode(' ', strtolower($request->title)));
             $property->state = $request->state;
             $property->title = $request->title;
             $property->topography = $request->topography;

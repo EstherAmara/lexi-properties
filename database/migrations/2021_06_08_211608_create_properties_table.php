@@ -24,6 +24,7 @@ class CreatePropertiesTable extends Migration
             $table->longText('payment_plan');
             $table->string('pictures');
             $table->string('proximity');
+            $table->string('slug');
             $table->string('state');
             $table->string('title');
             $table->string('topography');

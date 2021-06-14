@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/props.jpg') }})">
+    <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/images/props.jpg') }})">
         <p class="font-semibold home text-white bebas-neue"> Properties Available </p>
     </section>
 
@@ -10,7 +10,7 @@
         <div class="gap-4 grid grid-cols-3">
             @foreach ($allProperties as $property)
                 <div class="bg-white box-shadow">
-                    <a href="{{ url('/properties/'.$property->id) }}">
+                    <a href="{{ url('/properties/'.$property->slug) }}">
                         <img src="{{ asset($property->pictures) }}" alt="" class="h-52 object-center object-cover rounded-br-full w-full">
                         <div class="px-3 py-2 text-gray-600 text-xs">
                             <p class="text-sm font-bold"> {{ $property->title }} </p>
