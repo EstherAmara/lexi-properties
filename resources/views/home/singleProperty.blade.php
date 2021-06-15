@@ -23,11 +23,11 @@
                 <p> {{ $property->amount }} </p>
             </div>
             <div class="border-l flex items-center justify-center px-3 space-x-3">
-                <img src="{{ asset('/assets/svg/tape-measure-svgrepo-com.svg') }}" alt="" class="w-10 h-10">
+                <img src="{{ asset('/assets/svg/tape-measure-svgrepo-com.svg') }}" alt="" class="w-9 h-9">
                 <p> {{ $property->measurement }} </p>
             </div>
             <div class="border-l border-r flex items-center justify-center px-3 space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="#0694a2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="#0694a2">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -43,11 +43,21 @@
     <section class="mx-auto my-24 w-2/3">
         <div class="font-medium gap-5 grid grid-cols-2 text-lg text-gray-500">
             <div class="flex items-center justify-center px-3 space-x-3">
-                <p class="text-teal-600"> Nearest Location: </p>
+                <p class="flex items-center space-x-1 text-teal-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                    </svg>
+                    <span> Nearest Location: </span>
+                </p>
                 <p> {{ $property->proximity }} </p>
             </div>
             <div class="flex items-center justify-center px-3 space-x-3">
-                <p class="text-teal-600"> Topography: </p>
+                <p class="flex items-center space-x-1 text-teal-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                    </svg>
+                    <span> Topography: </span>
+                </p>
                 <p> {{ $property->topography }} </p>
             </div>
         </div>
@@ -61,6 +71,19 @@
 
         <div class="leading-7 mt-9 text-gray-800 text-lg">
             {{ $property->description }}
-        </p>
+        </div>
+
+        <div class="mt-5">
+            <button id="showBook" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </button>
+        </div>
+        <div class="mt-5">
+            <form action="" id="main">
+                <input type="text" placeholder="Name" name="name" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
+                <input type="text" placeholder="Email" name="email" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
+                <input type="text" placeholder="Phone" name="phone" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
+                <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="block p-2 w-full"></textarea>
+                <input type="submit" value="Book" class="bg-peach cursor-not-allowed mt-4 py-2 px-8 rounded text-white" disabled>
+            </form>
+        </div>
     </section>
 @endsection
