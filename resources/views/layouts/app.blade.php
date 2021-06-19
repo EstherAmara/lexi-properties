@@ -33,16 +33,18 @@
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
         <header class="absolute mt-14 w-full">
-            <nav class="flex font-semibold hver justify-between mx-auto open-sans p-6 space-x-4 text-white text-xl sm:text-base w-2/3">
-                <a href="{{ url('/properties') }}" class="t-shadow @if(Request::segment(1) === ('properties')){{'active'}}@endif"> Properties </a>
+            <nav>
+                <div class="font-semibold hidden hver justify-between md:flex mx-auto open-sans p-6 space-x-4 text-white text-xl sm:text-base lg:w-2/3 w-10/12">
+                    <a href="{{ url('/properties') }}" class="t-shadow @if(Request::segment(1) === ('properties')){{'active'}}@endif"> Properties </a>
 
-                <a href="" class="t-shadow"> About </a>
+                    <a href="" class="t-shadow"> About </a>
 
-                <a href="{{ url('/') }}" class="t-shadow @if(Request::is('/')){{'active'}}@endif"> Home </a>
+                    <a href="{{ url('/') }}" class="t-shadow @if(Request::is('/')){{'active'}}@endif"> Home </a>
 
-                <a href="{{ url('/land-banking-investment') }}" class="t-shadow @if(Request::is('land-banking-investment')){{ 'active' }}@endif"> Land Banking Investment </a>
+                    <a href="{{ url('/land-banking-investment') }}" class="t-shadow @if(Request::is('land-banking-investment')){{ 'active' }}@endif"> Land Banking Investment </a>
 
-                <a href="{{ url('/contact-me') }}" class="t-shadow @if(Request::is('contact-me')){{ 'active' }}@endif"> Contact </a>
+                    <a href="{{ url('/contact-me') }}" class="t-shadow @if(Request::is('contact-me')){{ 'active' }}@endif"> Contact </a>
+                </div>
             </nav>
         </header>
 
@@ -52,8 +54,8 @@
 
         <footer>
             <div class="bg-ivory py-7">
-                <div class=" flex justify-between mx-auto w-2/3">
-                    <div class="flex text-lg text-gray-200 space-x-5">
+                <div class="flex flex-col justify-between md:flex-row md:space-y-0 mx-auto space-y-5 w-2/3">
+                    <div class="flex justify-center text-lg text-gray-200 space-x-5">
                         <i class="border fa fa-facebook flex h-8 items-center justify-center rounded-full text-center w-8"></i>
                         <i class="border fa fa-twitter flex h-8 items-center justify-center rounded-full text-center w-8"></i>
                         <i class="border fa fa-instagram flex h-8 items-center justify-center rounded-full text-center w-8"></i>
@@ -73,7 +75,10 @@
 
             <div class="bg-misty-blue py-20 text-center text-md">
                 <p class="text-white"> Lexi Properties, Lagos State, Nigeria </p>
-                <p class="mt-3 text-white"> &copy; {{ now()->year }} | All rights reserved | Designed with &hearts; by Esthere </p>
+                <p class="flex flex-col md:flex-row md:justify-center md:space-y-0 mt-3 space-y-2 text-white">
+                    <span> &copy; {{ now()->year }} | All rights reserved | </span>
+                    <span> &nbsp;Designed with &hearts; by Esthere </span>
+                </p>
             </div>
         </footer>
     </div>
