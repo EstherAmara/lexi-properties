@@ -2,17 +2,17 @@
 
 @section('content')
     <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/images/contact.jpg') }}); background-color: rgba(1, 1, 1, 0.5); background-blend-mode: multiply">
-        <p class="font-semibold home text-white bebas-neue"> Contact us </p>
+        <p class="font-semibold home text-center text-white bebas-neue"> Contact us </p>
     </section>
 
-    <section class="mx-auto my-32 w-2/3">
-        <div class="flex justify-center w-full">
-            <div class="w-1/3">
+    <section class="mx-auto my-32 lg:w-2/3 w-10/12">
+        <div class="flex flex-col md:flex-row md:space-y-0 justify-center space-y-5 w-full">
+            <div class="w-full md:w-1/3">
                 <p class="font-semibold text-4xl"> Send me a message</p>
                 <p class="my-5 text-md"> <i class="fa fa-envelope-o font-semibold pr-2"></i> lexi@properties.com </p>
                 <p class="text-md"> <i class="fa fa-whatsapp font-semibold pr-2"></i> 0900 000 000 </p>
             </div>
-            <div class="w-2/3">
+            <div class="w-full md:w-2/3">
                 <div class="bg-green-200 font-semibold hidden inline-flex items-center mb-3 p-3 rounded space-x-5 text-center text-green-600 w-full" id="greenAlert">
                     <span class="border-2 border-green-400 cursor-pointer px-1 py-0.5 rounded-full text-green-400 text-xs" id="close"><i class="fa fa-close"></i></span>
                     <p> Your message was sent successfully </p>
