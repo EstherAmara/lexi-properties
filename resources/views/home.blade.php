@@ -50,7 +50,7 @@
         <div class="flex justify-center md:justify-end mb-2">
             <a href="{{ url('/properties') }}" class="bg-teal px-6 py-2 rounded text-white"> View All Properties </a>
         </div>
-        <div class="gap-0 grid grid-cols-1 md:grid-cols-2 md:gap-4 ">
+        <div class="gap-0 grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
             @foreach ($allProperties as $property)
                 <div class="bg-white box-shadow">
                     <a href="{{ url('/admin/properties/single') }}">

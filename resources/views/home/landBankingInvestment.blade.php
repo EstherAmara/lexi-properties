@@ -2,17 +2,17 @@
 
 @section('content')
     <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/images/landbank.jpg') }})">
-        <p class="font-semibold home text-white bebas-neue"> Land Banking Investment </p>
+        <p class="font-semibold home text-center text-white bebas-neue"> Land Banking Investment </p>
     </section>
 
-    <section class="mx-auto my-24 w-2/3">
+    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
         <p class="font-bold mb-5 text-3xl text-gray-700"> Heard of Land Banking Investment?</p>
         <p class="leading-6 text-lg">Simply means investing your money into real estate. Now with Landvest by Tribitat you can invest as low as 100k (one hundred thousand Naira) and earn up to 60-72% returns on investments yearly.</p>
     </section>
 
     <hr />
 
-    <section class="mx-auto my-20 w-2/3">
+    <section class="mx-auto my-20 lg:w-2/3 w-10/12">
         <p class="font-bold mb-5 text-3xl text-gray-700"> Why Landvest? </p>
 
         <div class="leading-6 text-lg">
