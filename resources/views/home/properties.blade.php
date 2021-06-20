@@ -7,7 +7,7 @@
     </section>
 
     <section class="mx-auto my-32 w-10/12 lg:w-2/3">
-        <div class="gap-0 grid grid-cols-1 md:gap-4 md:grid-cols-2 lg:grid-col-3">
+        <div class="gap-0 grid grid-cols-1 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
             @foreach ($allProperties as $property)
                 <div class="bg-white box-shadow">
                     <a href="{{ url('/properties/'.$property->slug) }}">
@@ -17,7 +17,7 @@
                             <p class="py-2.5"> <i class="fa fa-map-marker"></i> {{ $property->city }}, {{ $property->state }} </p>
                             <div class="flex justify-between">
                                 <p>{{ $property->measurement }}</p>
-                                <p>₦{{ $property->amount }}</p>
+                                <p>₦{{ number_format($property->amount) }}</p>
                             </div>
                         </div>
                     </a>

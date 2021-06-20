@@ -60,7 +60,7 @@
                             <p class="py-2.5"> <i class="fa fa-map-marker"></i> {{ $property->city }}, {{ $property->state }} </p>
                             <div class="flex justify-between">
                                 <p>{{ $property->measurement }}</p>
-                                <p>₦{{ $property->amount }}</p>
+                                <p>₦{{ number_format($property->amount) }}</p>
                             </div>
                         </div>
                     </a>

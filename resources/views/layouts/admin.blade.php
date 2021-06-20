@@ -69,13 +69,13 @@
 
         const alertPopUp = document.getElementById('alert');
 
-            alertPopUp.addEventListener('click', removeAlertPopUp);
+        alertPopUp.addEventListener('click', removeAlertPopUp);
 
-            function removeAlertPopUp(e) {
-                if(e.target.tagName === 'SPAN' || e.target.tagName === 'I') {
-                    alertPopUp.classList.add('hidden')
-                }
+        function removeAlertPopUp(e) {
+            if(e.target.tagName === 'SPAN' || e.target.tagName === 'I') {
+                alertPopUp.classList.add('hidden')
             }
+        }
     </script>
 </body>
 </html>

@@ -1,16 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-    <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/images/five.jpg') }}); height: 90vh;">
-        <p class="font-semibold home text-center text-white bebas-neue"> {{ $property->title }} </p>
+
+    <section class="flex flex-col font-bold justify-between md:flex-row md:space-y-0 mt-10 space-y-8 text-teal text-4xl">
+        <p> {{ $property->title }} </p>
+        <div>
+            <a href="{{ url('/admin/properties/'.$property->slug.'/edit') }}" class="bg-teal-600 list px-5 py-2 rounded-3xl text-sm text-white"> Edit property </a>
+        </div>
     </section>
 
-    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
-        <div class="mb-10">
-            <button id="showBook" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </button>
-        </div>
+    <section class="my-24">
         <div>
-            <p class="about font-bold mb-2 text-3xl text-gray-700 relative"> About this property </p>
+            <p class="about font-bold mb-2 text-2xl text-teal-700 relative"> About this property </p>
             <hr class="border border-yellow-200 hrr mt-4 w-52" />
         </div>
 
@@ -19,14 +20,14 @@
         </p>
     </section>
 
-    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
+    <section class="my-24">
         <div class="font-medium gap-5 grid grid-cols-1 md:grid-cols-3 text-lg text-gray-500">
             <div class="border-l border-r flex items-center md:justify-center md:border-r-0 px-3 space-x-3">
                 <span class="font-semibold text-teal-500 text-2xl">₦</span>
                 <p> {{ number_format($property->amount) }} </p>
             </div>
             <div class="border-l border-r flex items-center md:justify-center md:border-r-0 px-3 space-x-3">
-                <img src="{{ asset('/assets/svg/tape-measure-svgrepo-com.svg') }}" alt="" class="w-6 lg:w-9 h-9">
+                <img src="{{ asset('/assets/svg/tape-measure-svgrepo-com.svg') }}" alt="" class="w-9 h-9">
                 <p> {{ $property->measurement }} </p>
             </div>
             <div class="border-l border-r flex items-center md:justify-center px-3 space-x-3">
@@ -39,11 +40,11 @@
         </div>
     </section>
 
-    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
+    <section class="my-24">
         <img src="{{ asset($property->pictures) }}" alt="">
     </section>
 
-    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
+    <section class="my-24">
         <div class="font-medium gap-5 grid grid-cols-1 md:grid-cols-2 text-lg text-gray-500">
             <div class="flex items-center justify-center px-3 space-x-3">
                 <p class="flex items-center space-x-1 text-teal-600">
@@ -66,7 +67,7 @@
         </div>
     </section>
 
-    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
+    <section class="my-24">
         <div>
             <p class="about font-bold mb-2 text-3xl text-gray-700 relative"> Mortgage Plans </p>
             <hr class="border border-yellow-200 hrr mt-4 w-52" />
@@ -75,18 +76,6 @@
         <div class="leading-7 mt-9 text-gray-800 text-lg">
             {{ $property->payment_plan }}
         </div>
-
-        <div class="mt-5">
-            <button id="showBook" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </button>
-        </div>
-        <div class="mt-5">
-            <form action="" id="main">
-                <input type="text" placeholder="Name" name="name" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
-                <input type="text" placeholder="Email" name="email" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
-                <input type="text" placeholder="Phone" name="phone" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
-                <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="block p-2 w-full"></textarea>
-                <input type="submit" value="Book" class="bg-peach cursor-not-allowed mt-4 py-2 px-8 rounded text-white" disabled>
-            </form>
-        </div>
     </section>
+
 @endsection

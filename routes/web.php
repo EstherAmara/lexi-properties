@@ -33,5 +33,6 @@ Route::get('/admin/contacts/{id}', [AdminController::class, 'singleContact']);
 
 Route::get('/admin/properties', [AdminController::class, 'properties']);
 Route::match(['get', 'post'], '/admin/properties/new', [AdminController::class, 'newProperties']);
-Route::get('/admin/properties/{slug}', [AdminController::class, 'singleProperties']);
+Route::match(['get', 'post'], '/admin/properties/{slug}/edit', [AdminController::class, 'editProperty']);
+Route::get('/admin/properties/{slug}', [AdminController::class, 'singleProperty']);
 
