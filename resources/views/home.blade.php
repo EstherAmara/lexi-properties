@@ -9,24 +9,40 @@
         <div class="bg-center bg-cover bg-no-repeat flex h-44 items-center justify-center py-10 w-full" style="background-image: url({{ asset('/assets/images/two.jpg') }})">
             <p class="font-semibold t-shadow text-4xl lg:text-5xl text-center text-white"> - Quick Search - </p>
         </div>
-        <form action="">
+        <form action="{{ url('/quick-search') }}" method="POST">
+            @csrf
             <div class="bg-white border flex items-center mt-6 pl-2 rounded space-x-1 w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="gray">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                   </svg>
-                <input type="text" class="bg-transparent focus:outline-none py-2 w-full" placeholder="Location">
+                <input type="text" name="location" class="bg-transparent focus:outline-none py-2 w-full" placeholder="Location" required>
+                @error('location')
+                    <p class="text-red-500 text-xs italic mt-4">
+                        {{ $message }}
+                    </p>
+                @enderror
             </div>
             <div class="flex flex-col lg:flex-row lg:space-x-3 lg:space-y-0 mt-2 space-x-0 space-y-2 w-full">
                 <div class="bg-white border flex items-center pl-2 rounded space-x-1 w-full lg:w-1/2">
                     <p class="font-bold text-gray-500 text-lg"> &#8358; </p>
-                    <input type="text" class="bg-transparent focus:outline-none py-2 text-lg w-full" placeholder="Minimum Price">
+                    <input type="text" name="minPrice" class="bg-transparent focus:outline-none py-2 text-lg w-full" placeholder="Minimum Price" required>
+                    @error('minPrice')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                    @enderror
                 </div>
                 <div class="bg-white border flex items-center pl-2 rounded space-x-1 w-full lg:w-1/2">
                     <p class="font-bold text-gray-500 text-lg"> &#8358; </p>
-                    <input type="text" class="bg-transparent focus:outline-none py-2 text-lg w-full" placeholder="Maximum Price">
+                    <input type="text" name="maxPrice" class="bg-transparent focus:outline-none py-2 text-lg w-full" placeholder="Maximum Price" required>
+                    @error('maxPrice')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                    @enderror
                 </div>
             </div>
-            <input type="submit" value="Search" class="bg-peach mt-4 pb-2.5 pt-2 px-8 rounded text-lg text-white">
+            <input type="submit" value="Search" class="bg-peach cursor-pointer mt-4 pb-2.5 pt-2 px-8 rounded text-lg text-white">
         </form>
     </section>
 

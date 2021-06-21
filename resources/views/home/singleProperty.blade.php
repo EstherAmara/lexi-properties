@@ -6,12 +6,14 @@
     </section>
 
     <section class="mx-auto my-24 lg:w-2/3 w-10/12">
-        <div class="mb-10">
-            <button id="showBook" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </button>
-        </div>
-        <div>
-            <p class="about font-bold mb-2 text-3xl text-gray-700 relative"> About this property </p>
-            <hr class="border border-yellow-200 hrr mt-4 w-52" />
+        <div class="flex flex-col justify-between md:flex-row">
+            <div>
+                <p class="about font-bold mb-2 text-3xl text-gray-700 relative"> About this property </p>
+                <hr class="border border-yellow-200 hrr mt-4 w-52" />
+            </div>
+            <div class="mb-10">
+                <a href="#bookInsection" id="scrollToBook" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </a>
+            </div>
         </div>
 
         <div class="leading-7 mt-9 text-gray-800 text-lg">
@@ -26,11 +28,11 @@
                 <p> {{ number_format($property->amount) }} </p>
             </div>
             <div class="border-l border-r flex items-center md:justify-center md:border-r-0 px-3 space-x-3">
-                <img src="{{ asset('/assets/svg/tape-measure-svgrepo-com.svg') }}" alt="" class="w-6 lg:w-9 h-9">
+                <img src="{{ asset('/assets/svg/tape-measure-svgrepo-com.svg') }}" alt="" class="w-6 lg:w-7">
                 <p> {{ $property->measurement }} </p>
             </div>
             <div class="border-l border-r flex items-center md:justify-center px-3 space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="#0694a2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#0694a2">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -39,8 +41,8 @@
         </div>
     </section>
 
-    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
-        <img src="{{ asset($property->pictures) }}" alt="">
+    <section class="h-10/12 mx-auto my-24 lg:w-2/3 w-10/12">
+        <img src="{{ asset($property->pictures) }}" alt="" class="h-45 object-center object-cover w-full">
     </section>
 
     <section class="mx-auto my-24 lg:w-2/3 w-10/12">
@@ -79,7 +81,7 @@
         <div class="mt-5">
             <button id="showBook" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </button>
         </div>
-        <div class="mt-5">
+        <div class="hidden mt-5" id="bookInspection">
             <form action="" id="main">
                 <input type="text" placeholder="Name" name="name" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
                 <input type="text" placeholder="Email" name="email" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
@@ -89,4 +91,8 @@
             </form>
         </div>
     </section>
+
+    <script>
+        document.getElementById('showBook').addEventListener('click', function(e) { document.getElementById('bookInspection').classList.toggle('hidden')})
+    </script>
 @endsection

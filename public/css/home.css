@@ -55,6 +55,11 @@
     letter-spacing: 5px;
     text-shadow: 1px 1px 3px gray;
 }
+
+.h-45 {
+    height: 45rem;
+}
+
 .t-shadow {
     text-shadow: 4px 0px 3px #565656;
 }

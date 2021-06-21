@@ -26,6 +26,7 @@ class CreatePropertiesTable extends Migration
             $table->string('proximity');
             $table->string('slug');
             $table->string('state');
+            $table->string('status')->default('active');
             $table->string('title');
             $table->string('topography');
 

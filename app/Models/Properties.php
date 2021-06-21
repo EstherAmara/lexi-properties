@@ -10,4 +10,7 @@ class Properties extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    const ACTIVE = 'active',
+        INACTIVE = 'inactive';
 }
