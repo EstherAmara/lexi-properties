@@ -46,10 +46,6 @@
     margin: 0 auto;
 }
 
-.open-sans {
-    font-family: 'Open Sans', sans-serif;
-}
-
 .home {
     font-size: 4.5rem;
     letter-spacing: 5px;
@@ -58,6 +54,14 @@
 
 .h-45 {
     height: 45rem;
+}
+
+.open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.pattaya {
+    font-family: 'Pattaya', sans-serif;
 }
 
 .t-shadow {

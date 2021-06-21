@@ -9,8 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery-slim.min.js') }}"></script>
@@ -28,6 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
 
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
@@ -44,6 +43,25 @@
                     <a href="{{ url('/land-banking-investment') }}" class="t-shadow @if(Request::is('land-banking-investment')){{ 'active' }}@endif"> Land Banking Investment </a>
 
                     <a href="{{ url('/contact-me') }}" class="t-shadow @if(Request::is('contact-me')){{ 'active' }}@endif"> Contact </a>
+                </div>
+
+                {{-- mobile nav --}}
+                <div class="md:hidden">
+                    <div id="showNav" class="flex justify-between px-5">
+                        <span class="pattaya text-yellow-50 text-lg"> Lexi <br> Properties</span>
+                        <i class="fa fa-bars text-2xl text-yellow-50"></i>
+                    </div>
+                    <div class="flex flex-col" id="mobileNav">
+                        <a href="{{ url('/properties') }}" class="font-semibold px-5 py-2 text-yellow-700 @if(Request::segment(1) === ('properties')){{'bg-yellow-100 '}}@endif"> Properties </a>
+
+                        <a href="" class="font-semibold px-5 py-2 text-yellow-700 @if(Request::segment(1) === ('about')){{'bg-yellow-100 '}}@endif"> About </a>
+
+                        <a href="{{ url('/') }}" class="font-semibold px-5 py-2 text-yellow-700 @if(Request::is('/')){{'bg-yellow-100'}}@endif"> Home </a>
+
+                        <a href="{{ url('/land-banking-investment') }}" class="font-semibold px-5 py-2 text-yellow-700 @if(Request::is('land-banking-investment')){{ 'bg-yellow-100' }}@endif"> Land Banking Investment </a>
+
+                        <a href="{{ url('/contact-me') }}" class="font-semibold px-5 py-2 text-yellow-700 @if(Request::is('contact-me')){{ 'bg-yellow-100' }}@endif"> Contact </a>
+                    </div>
                 </div>
             </nav>
         </header>
@@ -89,5 +107,9 @@
 
     <!-- Slick Js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        document.getElementById('showNav').addEventListener('click', function(e) { document.getElementById('mobileNav').classList.toggle('hidden')})
+    </script>
 </body>
 </html>
