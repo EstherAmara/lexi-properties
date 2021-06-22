@@ -57,6 +57,15 @@ class AdminController extends Controller
             $property->title = $request->title;
             $property->topography = $request->topography;
 
+            if($request->pictures) {
+                $image = $request->file('pictures');
+                $name = Str::slug($request->pictures).'_'.time();
+                $filePath = '/assets/images/uploads/';
+                $file = $name. '.' . $image->getClientOriginalExtension();
+                $image->move(public_path($filePath), $file);
+                $property->pictures = $filePath.$file;
+            }
+
             $property->update();
 
             return redirect('/admin/properties')->with('success', 'You\'ve successfully edited this property');
