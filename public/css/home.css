@@ -16,11 +16,17 @@
 .bg-ivory {
     background-color: #a89087;
 }
+.bg-lemon-a {
+    background-color: rgba(142, 140, 16, 0.72);
+}
 .bg-misty-blue {
     background-color: #2F5061;
 }
 .bg-peach {
     background-color: #F75C66;
+}
+.bg-purple-a {
+    background-color: rgba(31, 16, 142, 0.57);
 }
 .bg-teal {
     background-color: #4297A0;

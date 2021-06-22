@@ -34,18 +34,34 @@
 <body class="bg-gray-100 antialiased leading-none font-sans">
     <div class="lg:flex min-h-screen relative">
 
-        <header class="bg-white duration-200 ease-in-out fixed inset-y-0 left-0 lg:relative lg:translate-x-0 px-7 py-7 sidebar space-y-6 text-sm transform transition w-64 z-40 -translate-x-full">
-            <nav class="flex flex-1 flex-col font-bold h-screen sidebar space-y-2 text-gray-500">
-                <span class="mb-8 mt-3 self-center"><a href="{{ url('/') }}" class="pattaya text-teal text-4xl">
+        {{-- mobile menu bar --}}
+        <div class="bg-dark flex justify-between lg:hidden px-10 pt-7 relative text-teal">
+            {{-- logo --}}
+            <div class="lg:w-24 my-auto w-1/6">
+                <span class="mb-8 mt-3 self-center"><a href="{{ url('/') }}" class="pattaya text-teal text-2xl">
                     Lexi <br> Properties
                 </a></span>
-                <a href="{{ url('/admin') }}" class="hover:bg-gray-200 p-4 rounded @if(Request::is('admin')){{'active'}} @endif"> Dashboard </a>
+            </div>
+            {{-- mobile side bar --}}
+            <button class="mobile-menu-button py-4 focus:outline-none text-teal">
+                <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+
+        <header class="bg-white duration-200 ease-in-out fixed inset-y-0 left-0 lg:relative lg:translate-x-0 px-7 py-7 sidebar space-y-6 text-sm transform transition w-64 z-40 -translate-x-full">
+            <nav class="flex flex-1 flex-col font-bold h-screen sidebar space-y-2 text-gray-500">
+                <span class="mb-8 mt-3 self-center"><a href="{{ url('/') }}" class="font-normal pattaya text-teal text-4xl">
+                    Lexi <br> Properties
+                </a></span>
+                <a class="cursor-not-allowed hover:bg-gray-200 p-4 rounded @if(Request::is('admin')){{'active'}} @endif"> Dashboard </a>
 
                 <a href="{{ url('/admin/properties') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('properties')){{ 'active' }}@endif"> Properties </a>
 
-                <a href="{{ url('/') }}" class="p-4 rounded @if(Request::is('/')){{'active'}}@endif"> Home </a>
+                {{-- <a href="{{ url('/') }}" class="p-4 rounded @if(Request::is('/')){{'active'}}@endif"> Home </a>
 
-                <a href="" class="p-4 rounded"> Land Banking Investment </a>
+                <a href="" class="p-4 rounded"> Land Banking Investment </a> --}}
 
                 <a href="{{ url('/admin/contacts') }}" class="p-4 rounded @if(Request::segment(2) == ('contacts')){{'active'}}@endif"> Contacts </a>
             </nav>
@@ -61,11 +77,20 @@
     <script src="{{ asset('js/jquery-slim.min.js') }}"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
+
     <script>
         console.log('hello');
         $('#dataTable').DataTable({
             "order": [],
         });
+
+        const btn = document.querySelector('.mobile-menu-button');
+            const sidebar = document.querySelector('.sidebar');
+
+            btn.addEventListener('click', () =>{
+                console.log('hello');
+                sidebar.classList.toggle('-translate-x-full');
+            });
 
         const alertPopUp = document.getElementById('alert');
 

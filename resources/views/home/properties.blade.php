@@ -2,12 +2,12 @@
 
 @section('content')
 
-    <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/images/props.jpg') }})">
+    <section class="bg-center bg-cover bg-no-repeat flex h-screen items-center justify-center md:h-96 pt-12" style="background-image: url({{ asset('/assets/images/props.jpg') }})">
         <p class="font-semibold home text-center text-white bebas-neue"> Properties Available </p>
     </section>
 
     <section class="mx-auto my-32 w-10/12 lg:w-2/3">
-        <div class="gap-0 grid grid-cols-1 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div class="gap-5 grid grid-cols-1 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
             @foreach ($allProperties as $property)
                 <div class="bg-white box-shadow">
                     <a href="{{ url('/properties/'.$property->slug) }}">

@@ -47,20 +47,20 @@
 
                 {{-- mobile nav --}}
                 <div class="md:hidden">
-                    <div id="showNav" class="flex justify-between px-5">
-                        <span class="pattaya text-yellow-50 text-lg"> Lexi <br> Properties</span>
-                        <i class="fa fa-bars text-2xl text-yellow-50"></i>
+                    <div class="flex justify-between p-5">
+                        <a href={{ url('/') }}><span class="pattaya text-yellow-50 text-lg"> Lexi <br> Properties</span></a>
+                        <i id="showNav" class="fa fa-bars text-2xl text-yellow-50"></i>
                     </div>
-                    <div class="flex flex-col" id="mobileNav">
-                        <a href="{{ url('/properties') }}" class="font-semibold px-5 py-2 text-yellow-700 @if(Request::segment(1) === ('properties')){{'bg-yellow-100 '}}@endif"> Properties </a>
+                    <div class="flex flex-col hidden bg-lemon-a" id="mobileNav">
+                        <a href="{{ url('/properties') }}" class="font-semibold px-5 py-4 text-white @if(Request::segment(1) === ('properties')){{'bg-purple-a'}}@endif"> Properties </a>
 
-                        <a href="" class="font-semibold px-5 py-2 text-yellow-700 @if(Request::segment(1) === ('about')){{'bg-yellow-100 '}}@endif"> About </a>
+                        <a href="" class="font-semibold px-5 py-4 text-white @if(Request::segment(1) === ('about')){{'bg-purple-a'}}@endif"> About </a>
 
-                        <a href="{{ url('/') }}" class="font-semibold px-5 py-2 text-yellow-700 @if(Request::is('/')){{'bg-yellow-100'}}@endif"> Home </a>
+                        <a href="{{ url('/') }}" class="font-semibold px-5 py-4 text-white @if(Request::is('/')){{'bg-purple-a'}}@endif"> Home </a>
 
-                        <a href="{{ url('/land-banking-investment') }}" class="font-semibold px-5 py-2 text-yellow-700 @if(Request::is('land-banking-investment')){{ 'bg-yellow-100' }}@endif"> Land Banking Investment </a>
+                        <a href="{{ url('/land-banking-investment') }}" class="font-semibold px-5 py-4 text-white @if(Request::is('land-banking-investment')){{ 'bg-purple-a' }}@endif"> Land Banking Investment </a>
 
-                        <a href="{{ url('/contact-me') }}" class="font-semibold px-5 py-2 text-yellow-700 @if(Request::is('contact-me')){{ 'bg-yellow-100' }}@endif"> Contact </a>
+                        <a href="{{ url('/contact-me') }}" class="font-semibold px-5 py-4 text-white @if(Request::is('contact-me')){{ 'bg-purple-a' }}@endif"> Contact </a>
                     </div>
                 </div>
             </nav>

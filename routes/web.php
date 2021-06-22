@@ -30,7 +30,7 @@ Route::get('/properties/{slug}', [HomeController::class, 'singleProperty']);
 Route::post('/search', [SearchController::class, 'simpleSearch']);
 Route::post('/quick-search', [SearchController::class, 'quickSearch']);
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [AdminController::class, 'properties'])->name('admin');
 
 Route::get('/admin/contacts', [AdminController::class, 'contact']);
 Route::get('/admin/contacts/{id}', [AdminController::class, 'singleContact']);

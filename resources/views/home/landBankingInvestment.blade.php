@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/images/landbank.jpg') }})">
-        <p class="font-semibold home text-center text-white bebas-neue"> Land Banking Investment </p>
+    <section class="bg-center bg-cover bg-no-repeat flex h-screen items-center justify-center md:h-96 pt-12" style="background-image: url({{ asset('/assets/images/landbank.jpg') }})">
+        <p class="font-semibold home mt-10 text-center text-white bebas-neue"> Land Banking Investment </p>
     </section>
 
     <section class="mx-auto my-24 lg:w-2/3 w-10/12">

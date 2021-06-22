@@ -9,7 +9,7 @@
         </div>
     </section>
 
-    <section class="gap-0 grid grid-cols-1 lg:grid-cols-3 lg:gap-5 md:gap-4 md:grid-cols-2 mt-20 xl:grid-cols-4">
+    <section class="gap-8 grid grid-cols-1 lg:grid-cols-3 lg:gap-5 md:gap-4 md:grid-cols-2 mt-20 xl:grid-cols-4">
         @foreach ($allProperties as $property)
             <div class="bg-white box-shadow">
                 <a href="{{ url('/admin/properties/'.$property->slug) }}">
