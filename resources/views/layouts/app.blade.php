@@ -36,7 +36,7 @@
                 <div class="font-semibold hidden hver justify-between md:flex mx-auto open-sans p-6 space-x-4 text-white text-xl sm:text-base lg:w-2/3 w-10/12">
                     <a href="{{ url('/properties') }}" class="t-shadow @if(Request::segment(1) === ('properties')){{'active'}}@endif"> Properties </a>
 
-                    <a href="" class="t-shadow"> About </a>
+                    <a href="{{ url('/about') }}" class="t-shadow @if(Request::segment(1) === ('about')){{'active'}}@endif"> About </a>
 
                     <a href="{{ url('/') }}" class="t-shadow @if(Request::is('/')){{'active'}}@endif"> Home </a>
 
@@ -54,7 +54,7 @@
                     <div class="flex flex-col hidden bg-lemon-a" id="mobileNav">
                         <a href="{{ url('/properties') }}" class="font-semibold px-5 py-4 text-white @if(Request::segment(1) === ('properties')){{'bg-purple-a'}}@endif"> Properties </a>
 
-                        <a href="" class="font-semibold px-5 py-4 text-white @if(Request::segment(1) === ('about')){{'bg-purple-a'}}@endif"> About </a>
+                        <a href="{{ url('/about') }}" class="font-semibold px-5 py-4 text-white @if(Request::segment(1) === ('about')){{'bg-purple-a'}}@endif"> About </a>
 
                         <a href="{{ url('/') }}" class="font-semibold px-5 py-4 text-white @if(Request::is('/')){{'bg-purple-a'}}@endif"> Home </a>
 

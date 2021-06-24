@@ -25,6 +25,10 @@ class HomeController extends Controller
         return view('home')->with(compact('allProperties'));
     }
 
+    public function about() {
+        return view('home.about');
+    }
+
     public function landBankingInvestment() {
         return view('home.landBankingInvestment');
     }

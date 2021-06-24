@@ -29,6 +29,7 @@ Route::get('/properties', [HomeController::class, 'properties'])->name('properti
 Route::get('/properties/{slug}', [HomeController::class, 'singleProperty']);
 Route::post('/search', [SearchController::class, 'simpleSearch']);
 Route::post('/quick-search', [SearchController::class, 'quickSearch']);
+Route::get('/about', [HomeController::class, 'about']);
 
 Route::get('/admin', [AdminController::class, 'properties'])->name('admin');
 
