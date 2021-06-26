@@ -6,20 +6,37 @@
         <p class="text-teal font-bold text-4xl"> Add New Listing </p>
     </section>
 
-    {{-- <section class="my-24">
+    <style>
+        .box__dragndrop,
+        .box__uploading,
+        .box__success,
+        .box__error {
+            display: none;
+        }
+        /* .box.has-advanced-upload {
+            background-color: white;
+            outline: 2px dashed black;
+            outline-offset: -10px;
+        }
+        .box.has-advanced-upload .box__dragndrop {
+            display: inline;
+        } */
+    </style>
+
+    <section class="my-24">
         <form class="box" method="post" action="" enctype="multipart/form-data">
             <div class="box__input">
-                <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
-                <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-                <button class="box__button" type="submit">Upload</button>
+              <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+              <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+              <button class="box__button" type="submit">Upload</button>
             </div>
             <div class="box__uploading">Uploading…</div>
             <div class="box__success">Done!</div>
             <div class="box__error">Error! <span></span>.</div>
         </form>
-    </section> --}}
+    </section>
 
-    <section>
+    {{-- <section>
         <form action="" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="gap-0 grid grid-cols-1 md:gap-5 md:grid-cols-3 md:space-y-0 mt-10 space-y-8">
@@ -137,6 +154,19 @@
                 <input type="submit" value="Submit" class="bg-teal-700 border cursor-pointer hover:bg-white hover:border-teal-500 hover:font-semibold hover:text-teal-600 px-8 py-2.5 rounded-md text-sm text-white">
             </div>
         </form>
-    </section>
+    </section> --}}
 
+    <script>
+        var isAdvancedUpload = function() {
+            var div = document.createElement('div');
+            return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
+        }();
+
+        console.log(isAdvancedUpload);
+        var $form = document.querySelector('.box');
+
+        if (isAdvancedUpload) {
+            $form.classList.add('has-advanced-upload');
+        }
+    </script>
 @endsection
