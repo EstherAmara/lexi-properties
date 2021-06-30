@@ -82,7 +82,8 @@
             <button id="showBook" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </button>
         </div>
         <div class="mt-5" id="bookInspection">
-            <form action="" id="main">
+            <form action="{{ url('/properties/book-inspection/'.$property->id) }}" id="main" method="POST">
+                @csrf
                 <div>
                     <label for="name"> Name </label>
                     <input type="text" name="name" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
@@ -97,7 +98,7 @@
                 </div>
                 <input type="text" placeholder="Phone" name="phone" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
                 <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="block p-2 w-full"></textarea>
-                <input type="submit" value="Book" class="bg-peach cursor-not-allowed mt-4 py-2 px-8 rounded text-white" disabled>
+                <input type="submit" value="Book" class="bg-peach cursor-pointer mt-4 py-2 px-8 rounded text-white">
             </form>
         </div>
     </section>

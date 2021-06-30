@@ -25,8 +25,11 @@ Route::post('/contact', [ContactsController::class, 'submitContactForm']);
 Route::get('/land-banking-investment', [HomeController::class, 'landBankingInvestment']);
 Route::get('/contact-me', [ContactsController::class, 'index'])->name('contact');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+
 Route::get('/properties', [HomeController::class, 'properties'])->name('properties');
 Route::get('/properties/{slug}', [HomeController::class, 'singleProperty']);
+Route::post('/properties/book-inspection/{id}', [HomeController::class, 'bookInspection']);
+
 Route::post('/search', [SearchController::class, 'simpleSearch']);
 Route::post('/quick-search', [SearchController::class, 'quickSearch']);
 Route::get('/about', [HomeController::class, 'about']);

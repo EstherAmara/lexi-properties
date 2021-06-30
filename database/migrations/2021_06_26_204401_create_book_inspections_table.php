@@ -15,6 +15,7 @@ class CreateBookInspectionsTable extends Migration
     {
         Schema::create('book_inspections', function (Blueprint $table) {
             $table->id();
+            $table->string('property_id');
             $table->string('name');
             $table->string('email');
             $table->string('phone');

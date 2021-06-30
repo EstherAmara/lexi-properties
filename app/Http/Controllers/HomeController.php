@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
 
+use App\Models\BookInspection;
 use App\Models\Properties;
 
 class HomeController extends Controller
@@ -43,5 +46,35 @@ class HomeController extends Controller
         $property = Properties::where('slug', $slug)->first();
 
         return view('home.singleProperty')->with(compact('property'));
+    }
+
+    public function bookInspection(Request $request, $id = null) {
+        $validatedData = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'message' => 'required',
+            'date' => 'required',
+            'time' => 'required',
+        ]);
+
+        if($validatedData->fails()) {
+            return redirect()->back()
+                ->withErrors($validatedData)
+                ->withInput()
+                ->with('error', 'There\'s an error in one or more fields');
+        }
+        $inspection = new BookInspection;
+        $inspection->property_id = $id;
+        $inspection->name = $request->name;
+        $inspection->email = $request->email;
+        $inspection->phone = $request->phone;
+        $inspection->message = $request->message;
+        $inspection->date = $request->date;
+        $inspection->time = $request->time;
+
+        $inspection->save();
+
+        return redirect()->back()->with('success', 'You\'ve successfully book an inspection for this property');
     }
 }
