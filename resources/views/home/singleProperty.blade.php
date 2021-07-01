@@ -82,22 +82,64 @@
             <button id="showBook" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </button>
         </div>
         <div class="mt-5" id="bookInspection">
-            <form action="{{ url('/properties/book-inspection/'.$property->id) }}" id="main" method="POST">
+            <form action="{{ url('/properties/book-inspection/'.$property->id) }}" id="main" method="POST" class="flex flex-col space-y-3">
                 @csrf
                 <div>
-                    <label for="name"> Name </label>
-                    <input type="text" name="name" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
+                    <label for="email" class="text-gray-800"> Name </label>
+                    <input type="text" name="name" class="block border border-red-50 focus:outline-none mb-2 mt-2 px-2 py-3 rounded w-full">
                     @error('name')
-
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
                     @enderror
                 </div>
-                <input type="text" placeholder="Email" name="email" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
-                <div class="flex mb-2 space-x-5 w-full">
-                    <input type="date" name="date" id="date" class="border border-red-50 focus:outline-none p-2 rounded w-1/2">
-                    <input type="time" name="time" id="time" class="border border-red-50 focus:outline-none p-2 rounded w-1/2">
+                <div>
+                    <label for="email" class="text-gray-800"> Email </label>
+                    <input type="text" placeholder="Email" name="email" class="block border border-red-50 focus:outline-none mb-2 mt-2 px-2 py-3 rounded w-full">
+                    @error('email')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                    @enderror
                 </div>
-                <input type="text" placeholder="Phone" name="phone" class="block border border-red-50 focus:outline-none mb-2 p-2 rounded w-full">
-                <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="block p-2 w-full"></textarea>
+                <div class="flex mb-2 space-x-8 w-full">
+                    <div class="flex flex-col w-1/2">
+                        <label for="date" class="text-gray-800"> Date </label>
+                        <input type="date" name="date" id="date" class="border border-red-50 focus:outline-none mt-2 px-2 py-3 rounded w-full">
+                        @error('date')
+                            <p class="text-red-500 text-xs italic mt-4">
+                                {{ $message }}
+                            </p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-col w-1/2">
+                        <label for="time" class="text-gray-800"> Time </label>
+                        <input type="time" name="time" id="time" class="border border-red-50 focus:outline-none mt-2 px-2 py-3 rounded w-ful;">
+                        @error('time')
+                            <p class="text-red-500 text-xs italic mt-4">
+                                {{ $message }}
+                            </p>
+                        @enderror
+                    </div>
+                </div>
+                <div>
+                    <label for="phone" class="text-gray-800"> Phone </label>
+                    <input type="text" placeholder="Phone" name="phone" class="block border border-red-50 focus:outline-none mb-2 mt-2 px-2 py-3 rounded w-full">
+                    @error('phone')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+                <div>
+                    <label for="message" class="text-gray-800"> Message </label>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" class="block mt-2 px-2 py-3 w-full"></textarea>
+                    @error('message')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
                 <input type="submit" value="Book" class="bg-peach cursor-pointer mt-4 py-2 px-8 rounded text-white">
             </form>
         </div>
