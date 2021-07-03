@@ -31,18 +31,18 @@
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
-        <header class="absolute mt-14 w-full">
+        <header class="absolute pt-5 md:pt-14 w-full">
             <nav>
                 <div class="font-semibold hidden hver justify-between md:flex mx-auto open-sans p-6 space-x-4 text-white text-xl sm:text-base lg:w-2/3 w-10/12">
                     <a href="{{ url('/properties') }}" class="t-shadow @if(Request::segment(1) === ('properties')){{'active'}}@endif"> Properties </a>
 
-                    <a href="{{ url('/about') }}" class="t-shadow @if(Request::segment(1) === ('about')){{'active'}}@endif"> About </a>
+                    <a href="{{ url('/about') }}" class="t-shadow @if(Request::segment(1) === ('about')){{'active'}}@endif"> About Us </a>
 
                     <a href="{{ url('/') }}" class="t-shadow @if(Request::is('/')){{'active'}}@endif"> Home </a>
 
                     <a href="{{ url('/land-banking-investment') }}" class="t-shadow @if(Request::is('land-banking-investment')){{ 'active' }}@endif"> Land Banking Investment </a>
 
-                    <a href="{{ url('/contact-me') }}" class="t-shadow @if(Request::is('contact-me')){{ 'active' }}@endif"> Contact </a>
+                    <a href="{{ url('/contact-us') }}" class="t-shadow @if(Request::is('contact-us')){{ 'active' }}@endif"> Contact Us</a>
                 </div>
 
                 {{-- mobile nav --}}
@@ -60,7 +60,7 @@
 
                         <a href="{{ url('/land-banking-investment') }}" class="font-semibold px-5 py-4 text-white @if(Request::is('land-banking-investment')){{ 'bg-purple-a' }}@endif"> Land Banking Investment </a>
 
-                        <a href="{{ url('/contact-me') }}" class="font-semibold px-5 py-4 text-white @if(Request::is('contact-me')){{ 'bg-purple-a' }}@endif"> Contact </a>
+                        <a href="{{ url('/contact-us') }}" class="font-semibold px-5 py-4 text-white @if(Request::is('contact-us')){{ 'bg-purple-a' }}@endif"> Contact Us </a>
                     </div>
                 </div>
             </nav>

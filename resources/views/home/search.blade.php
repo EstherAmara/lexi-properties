@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/images/props.jpg') }})">
+    <section class="bg-center bg-cover bg-no-repeat bg-t-black flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/images/props.jpg') }})">
         <p class="font-semibold home text-center text-white bebas-neue"> {{ ucwords(strtolower($q)) }} </p>
     </section>
 

@@ -12,5 +12,10 @@ class Properties extends Model
     protected $guarded = [];
 
     const ACTIVE = 'active',
-        INACTIVE = 'inactive';
+        INACTIVE = 'inactive',
+        INDEX = 'index';
+
+    public function isIndex() {
+        return $this->status === self::INDEX;
+    }
 }

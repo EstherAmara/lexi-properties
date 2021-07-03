@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="h-screen flex justify-center items-center" style="background-image: url({{ asset('/assets/images/one.jpg') }})">
+    <section class="bg-t-black h-screen flex justify-center items-center" style="background-image: url({{ asset('/assets/images/one.jpg') }})">
         <p class="font-semibold home text-white text-center bebas-neue"> Let's Get You Home </p>
     </section>
 
@@ -46,11 +46,17 @@
         </form>
     </section>
 
-    <section class="h-screen" style="background-image: url({{ asset('/assets/images/two.jpg') }})">
-        <div class="flex h-full justify-center items-center">
-            <p class="font-bold text-white text-5xl"> FOR SALE!</p>
-        </div>
-    </section>
+    @if ($indexProperty)
+        <section class="h-screen bg-center bg-cover bg-no-repeat bg-t-black" style="background-image: url({{ asset($indexProperty->pictures) }})">
+            <div class="flex flex-col h-full justify-center items-center space-y-3">
+                <p class="font-bold text-white text-5xl"> FOR SALE!</p>
+                <p class="font-bold text-white text-4xl">{{ $indexProperty->title }}</p>
+                <div class="mt-14">
+                    <a href="{{ url('/properties/'.$indexProperty->slug) }}" class="bg-teal block px-6 py-2 rounded-xl text-white"> View Property</a>
+                </div>
+            </div>
+        </section>
+    @endif
 
     <section class="flex flex-col-reverse items-center justify-center lg:w-2/3 md:flex-row md:space-x-10 mx-auto my-32 space-x-0 w-10/12">
         <div class="h-96">
@@ -69,7 +75,7 @@
         <div class="gap-0 grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
             @foreach ($allProperties as $property)
                 <div class="bg-white box-shadow">
-                    <a href="{{ url('/admin/properties/single') }}">
+                    <a href="{{ url('/properties/'.$property->slug) }}">
                         <img src="{{ asset($property->pictures) }}" alt="" class="h-52 object-center object-cover rounded-br-full w-full">
                         <div class="px-3 py-2 text-gray-600 text-xs">
                             <p class="text-sm font-bold"> {{ $property->title }} </p>
@@ -88,7 +94,7 @@
     <section class="mx-auto my-32 lg:w-2/3 w-10/12">
         <div class="flex flex-col justify-center lg:flex-row lg:space-y-0 space-y-5 w-full">
             <div class="lg:w-1/3 w-full">
-                <p class="font-semibold text-4xl"> Send me a message</p>
+                <p class="font-semibold text-4xl"> Send us a message</p>
                 <p class="my-5 text-md"> <i class="fa fa-envelope-o font-semibold pr-2"></i> lexi@properties.com </p>
                 <p class="text-md"> <i class="fa fa-whatsapp font-semibold pr-2"></i> 0900 000 000 </p>
             </div>

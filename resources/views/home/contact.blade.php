@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="bg-center bg-cover bg-no-repeat flex h-screen items-center justify-center md:h-96 pt-12" style="background-image: url({{ asset('/assets/images/contact.jpg') }}); background-color: rgba(1, 1, 1, 0.5); background-blend-mode: multiply">
+    <section class="bg-center bg-cover bg-no-repeat bg-t-black flex h-screen items-center justify-center md:h-96 pt-12" style="background-image: url({{ asset('/assets/images/contact.jpg') }}); background-color: rgba(1, 1, 1, 0.5); background-blend-mode: multiply">
         <p class="font-semibold home text-center text-white bebas-neue"> Contact us </p>
     </section>
 
     <section class="mx-auto my-32 lg:w-2/3 w-10/12">
         <div class="flex flex-col md:flex-row md:space-y-0 justify-center space-y-5 w-full">
             <div class="w-full md:w-1/3">
-                <p class="font-semibold text-4xl"> Send me a message</p>
+                <p class="font-semibold text-4xl"> Send us a message</p>
                 <p class="my-5 text-md"> <i class="fa fa-envelope-o font-semibold pr-2"></i> lexi@properties.com </p>
                 <p class="text-md"> <i class="fa fa-whatsapp font-semibold pr-2"></i> 0900 000 000 </p>
             </div>

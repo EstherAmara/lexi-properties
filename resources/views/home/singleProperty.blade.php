@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="bg-center bg-cover bg-no-repeat flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset('/assets/images/five.jpg') }}); height: 90vh;">
+    <section class="bg-center bg-cover bg-no-repeat bg-t-black flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset($property->pictures) }}); height: 90vh;">
         <p class="font-semibold home text-center text-white bebas-neue"> {{ $property->title }} </p>
     </section>
 

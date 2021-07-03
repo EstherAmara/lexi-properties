@@ -6,7 +6,7 @@
         <p class="text-teal font-bold text-4xl"> Add New Listing </p>
     </section>
 
-    <style>
+    {{-- <style>
         .box__dragndrop,
         .box__uploading,
         .box__success,
@@ -34,9 +34,9 @@
             <div class="box__success">Done!</div>
             <div class="box__error">Error! <span></span>.</div>
         </form>
-    </section>
+    </section> --}}
 
-    {{-- <section>
+    <section>
         <form action="" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="gap-0 grid grid-cols-1 md:gap-5 md:grid-cols-3 md:space-y-0 mt-10 space-y-8">
@@ -154,7 +154,7 @@
                 <input type="submit" value="Submit" class="bg-teal-700 border cursor-pointer hover:bg-white hover:border-teal-500 hover:font-semibold hover:text-teal-600 px-8 py-2.5 rounded-md text-sm text-white">
             </div>
         </form>
-    </section> --}}
+    </section>
 
     <script>
         var isAdvancedUpload = function() {

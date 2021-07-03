@@ -31,6 +31,10 @@
 .bg-teal {
     background-color: #4297A0;
 }
+.bg-t-black {
+    background-color: rgb(1 1 1 / 50%);
+    background-blend-mode: multiply;
+}
 
 .box-shadow {
     box-shadow: 1px 1px 6px 0px lightgrey;

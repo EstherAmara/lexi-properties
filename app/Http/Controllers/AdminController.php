@@ -74,6 +74,26 @@ class AdminController extends Controller
         return view('admin.properties.editProperty')->with(compact('property'));
     }
 
+    public function togglePropertyIndex($slug) {
+        $property = Properties::where('slug', $slug)->first();
+        if($property->isIndex()) {
+            $property->status = Properties::ACTIVE;
+            $property->update();
+        } else {
+            $index = Properties::where('status', Properties::INDEX)->first();
+            if($index) {
+                $index->status = Properties::ACTIVE;
+                $index->update();
+            }
+
+            $property->status = Properties::INDEX;
+            $property->update();
+        }
+
+
+        return redirect()->back()->with('success', 'Successful');
+    }
+
     public function newProperties(Request $request) {
         if($request->isMethod('post')) {
 
@@ -107,7 +127,7 @@ class AdminController extends Controller
             $property->measurement = $request->measurement;
             $property->payment_plan = $request->payment_plan;
             $property->proximity = $request->proximity;
-            $property->slug = implode('-', explode(' ', strtolower($request->title)));
+            $property->slug = implode('-', explode(' ', strtolower($request->title))) . '-' . strtotime(date('H:i:s'));
             $property->state = $request->state;
             $property->title = $request->title;
             $property->topography = $request->topography;

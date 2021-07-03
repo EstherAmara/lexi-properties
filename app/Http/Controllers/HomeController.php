@@ -24,8 +24,9 @@ class HomeController extends Controller
      */
     public function index() {
         $allProperties = Properties::latest()->paginate(9);
+        $indexProperty = Properties::where('status', Properties::INDEX)->first();
 
-        return view('home')->with(compact('allProperties'));
+        return view('home')->with(compact('allProperties', 'indexProperty'));
     }
 
     public function about() {
@@ -37,7 +38,7 @@ class HomeController extends Controller
     }
 
     public function properties() {
-        $allProperties = Properties::all();
+        $allProperties = Properties::paginate(12);
 
         return view('home.properties')->with(compact('allProperties'));
     }

@@ -2,7 +2,16 @@
 
 @section('content')
 
-    <section class="bg-center bg-cover bg-no-repeat flex h-screen items-center justify-center md:h-96 pt-12" style="background-image: url({{ asset('/assets/images/props.jpg') }})">
+<style>
+    .navig nav div:nth-child(2) {
+        flex-direction: column;
+    }
+    .navig  div:first-child {
+        margin-top: 5px;
+    }
+</style>
+
+    <section class="bg-center bg-cover bg-no-repeat bg-t-black flex h-screen items-center justify-center md:h-96 pt-16" style="background-image: url({{ asset('/assets/images/props.jpg') }})">
         <p class="font-semibold home text-center text-white bebas-neue"> Properties Available </p>
     </section>
 
@@ -23,6 +32,12 @@
                     </a>
                 </div>
             @endforeach
+        </div>
+    </section>
+
+    <section>
+        <div class="flex justify-center items-center navig">
+            {{$allProperties->links()}}
         </div>
     </section>
 

@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/contact', [ContactsController::class, 'submitContactForm']);
 Route::get('/land-banking-investment', [HomeController::class, 'landBankingInvestment']);
-Route::get('/contact-me', [ContactsController::class, 'index'])->name('contact');
+Route::get('/contact-us', [ContactsController::class, 'index'])->name('contact');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 Route::get('/properties', [HomeController::class, 'properties'])->name('properties');
@@ -42,5 +42,6 @@ Route::get('/admin/contacts/{id}', [AdminController::class, 'singleContact']);
 Route::get('/admin/properties', [AdminController::class, 'properties']);
 Route::match(['get', 'post'], '/admin/properties/new', [AdminController::class, 'newProperties']);
 Route::match(['get', 'post'], '/admin/properties/{slug}/edit', [AdminController::class, 'editProperty']);
+Route::get('/admin/properties/{slug}/index', [AdminController::class, 'togglePropertyIndex']);
 Route::get('/admin/properties/{slug}', [AdminController::class, 'singleProperty']);
 
