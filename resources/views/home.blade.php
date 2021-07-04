@@ -48,11 +48,11 @@
 
     @if ($indexProperty)
         <section class="h-screen bg-center bg-cover bg-no-repeat bg-t-black" style="background-image: url({{ asset($indexProperty->pictures) }})">
-            <div class="flex flex-col h-full justify-center items-center space-y-3">
+            <div class="flex flex-col h-full justify-center items-center space-y-10">
                 <p class="font-bold text-white text-5xl"> FOR SALE!</p>
-                <p class="font-bold text-white text-4xl">{{ $indexProperty->title }}</p>
-                <div class="mt-14">
-                    <a href="{{ url('/properties/'.$indexProperty->slug) }}" class="bg-teal block px-6 py-2 rounded-xl text-white"> View Property</a>
+                <div class="flex flex-col items-center space-y-5">
+                    <p class="font-bold text-white text-4xl">{{ $indexProperty->title }}</p>
+                    <a href="{{ url('/properties/'.$indexProperty->slug) }}" class="bg-teal px-4 py-2 rounded-xl text-center text-white"> View Property</a>
                 </div>
             </div>
         </section>

@@ -4,11 +4,11 @@
 
     <section class="flex flex-col font-bold justify-between md:flex-row md:space-y-0 mt-10 space-y-8 text-teal text-4xl">
         <p> {{ $property->title }} </p>
-        <div class="flex space-x-5">
-            <a href="{{ url('/admin/properties/'.$property->slug.'/index') }}" class="bg-white border border-teal-600 px-5 py-2 rounded-3xl text-sm text-teal-600">
+        <div class="space-x-5">
+            <a href="{{ url('/admin/properties/'.$property->slug.'/index') }}" class="bg-white border border-teal-600 px-5 py-2 rounded-3xl text-center text-sm text-teal-600">
                 {{ $property->isIndex() ? 'Remove index' : 'Make index' }}
             </a>
-            <a href="{{ url('/admin/properties/'.$property->slug.'/edit') }}" class="bg-teal-600 border border-teal-600 list px-5 py-2 rounded-3xl text-sm text-white"> Edit property </a>
+            <a href="{{ url('/admin/properties/'.$property->slug.'/edit') }}" class="bg-teal-600 border border-teal-600 list px-5 py-2 rounded-3xl text-center text-sm text-white"> Edit property </a>
         </div>
     </section>
 

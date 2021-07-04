@@ -1,3 +1,24 @@
+.contacts-box {
+    background: linear-gradient(90deg, #4297A0, #0db27d);
+    padding: 50px 0px;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3em;
+}
+.inspections-box {
+    background: linear-gradient(45deg, #e44a51, #e6439d);
+    padding: 50px 0px;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3em;
+}
+.properties-box {
+    background: linear-gradient(87deg, #242c6a, #066eec);
+    padding: 50px 0px;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3em;
+}
 .active {
     background: linear-gradient(45deg, #4297A0, #0db27d);
     color: white;
@@ -10,6 +31,25 @@
 
 .box-shadow {
     box-shadow: 1px 1px 6px 0px lightgrey;
+}
+
+.contains {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid teal;
+    color: teal;
+    font-weight: 600;
+}
+.contains div.flex {
+    border-bottom: 0.5px solid teal;
+    padding: 13px 30px;
+}
+.contains div.flex:last-child {
+    border-bottom: none;
+}
+.contains div.flex:nth-child(even) {
+    background: rgba(43, 124, 124, 0.186);
+    color: teal;
 }
 
 .icon:hover i.fa {

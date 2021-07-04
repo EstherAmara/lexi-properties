@@ -34,14 +34,18 @@ Route::post('/search', [SearchController::class, 'simpleSearch']);
 Route::post('/quick-search', [SearchController::class, 'quickSearch']);
 Route::get('/about', [HomeController::class, 'about']);
 
-Route::get('/admin', [AdminController::class, 'properties'])->name('admin');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 Route::get('/admin/contacts', [AdminController::class, 'contact']);
 Route::get('/admin/contacts/{id}', [AdminController::class, 'singleContact']);
+Route::post('/admin/contacts/reply/{id}', [AdminController::class, 'replyContact']);
 
 Route::get('/admin/properties', [AdminController::class, 'properties']);
 Route::match(['get', 'post'], '/admin/properties/new', [AdminController::class, 'newProperties']);
 Route::match(['get', 'post'], '/admin/properties/{slug}/edit', [AdminController::class, 'editProperty']);
 Route::get('/admin/properties/{slug}/index', [AdminController::class, 'togglePropertyIndex']);
 Route::get('/admin/properties/{slug}', [AdminController::class, 'singleProperty']);
+
+Route::get('/admin/inspections', [AdminController::class, 'inspections']);
+Route::get('/admin/inspections/{id}/single', [AdminController::class, 'singleInspection']);
 

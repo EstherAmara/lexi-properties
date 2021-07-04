@@ -55,9 +55,11 @@
                 <span class="mb-8 mt-3 self-center"><a href="{{ url('/') }}" class="font-normal pattaya text-teal text-4xl">
                     Lexi <br> Properties
                 </a></span>
-                <a class="cursor-not-allowed hover:bg-gray-200 p-4 rounded @if(Request::is('admin')){{'active'}} @endif"> Dashboard </a>
+                <a href="{{ url('/admin') }}" class="hover:bg-gray-200 p-4 rounded @if(Request::is('admin')){{'active'}} @endif"> Dashboard </a>
 
                 <a href="{{ url('/admin/properties') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('properties')){{ 'active' }}@endif"> Properties </a>
+
+                <a href="{{ url('/admin/inspections') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('inspections')){{ 'active' }}@endif"> Inspections </a>
 
                 {{-- <a href="{{ url('/') }}" class="p-4 rounded @if(Request::is('/')){{'active'}}@endif"> Home </a>
 

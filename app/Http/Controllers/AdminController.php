@@ -6,13 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
+use App\Models\BookInspection;
 use App\Models\Contacts;
 use App\Models\Properties;
 
 class AdminController extends Controller
 {
     public function index() {
-        return view('admin.index');
+        $numberOfContacts = Contacts::count();
+        $numberOfInspections = BookInspection::count();
+        $numberOfProperties = Properties::count();
+
+        return view('admin.index')->with(compact('numberOfContacts', 'numberOfInspections', 'numberOfProperties'));
     }
 
     public function contact() {
@@ -21,7 +26,7 @@ class AdminController extends Controller
         return view('admin.contacts.contacts')->with(compact('contacts'));
     }
 
-    public function editProperty(Request $request, $slug) {
+    public function editProperty(Request $request, $slug = null) {
         $property = Properties::where('slug', $slug)->first();
 
         if($request->isMethod('post')) {
@@ -54,6 +59,7 @@ class AdminController extends Controller
             $property->payment_plan = $request->payment_plan;
             $property->proximity = $request->proximity;
             $property->state = $request->state;
+            $property->slug = implode('-', explode(' ', strtolower($request->title))) . '-' . strtotime(date('H:i:s'));
             $property->title = $request->title;
             $property->topography = $request->topography;
 
@@ -74,24 +80,10 @@ class AdminController extends Controller
         return view('admin.properties.editProperty')->with(compact('property'));
     }
 
-    public function togglePropertyIndex($slug) {
-        $property = Properties::where('slug', $slug)->first();
-        if($property->isIndex()) {
-            $property->status = Properties::ACTIVE;
-            $property->update();
-        } else {
-            $index = Properties::where('status', Properties::INDEX)->first();
-            if($index) {
-                $index->status = Properties::ACTIVE;
-                $index->update();
-            }
+    public function inspections() {
+        $inspections = BookInspection::all();
 
-            $property->status = Properties::INDEX;
-            $property->update();
-        }
-
-
-        return redirect()->back()->with('success', 'Successful');
+        return view('admin.inspections.inspections')->with(compact('inspections'));
     }
 
     public function newProperties(Request $request) {
@@ -152,15 +144,51 @@ class AdminController extends Controller
         return view('admin.properties.properties')->with(compact('allProperties'));
     }
 
-    public function singleContact($contact_id) {
+    public function replyContact(Request $request, $contact_id = null) {
+        $contact = Contacts::findOrFail($contact_id);
+        $contact->replied = true;
+        $contact->subject = $request->subject;
+        $contact->reply = $request->message;
+        $contact->update();
+
+        return redirect()->back()->with('success', 'You\'ve successfully replied this contact');
+    }
+
+    public function singleContact($contact_id = null) {
         $contact = Contacts::findOrFail($contact_id);
 
         return view('admin.contacts.singleContact')->with(compact('contact'));
     }
 
-    public function singleProperty($slug) {
+    public function singleInspection($id = null) {
+        $inspection = BookInspection::findOrFail($id);
+
+        return view('admin.inspections.singleInspection')->with(compact('inspection'));
+    }
+
+    public function singleProperty($slug = null) {
         $property = Properties::where('slug', $slug)->first();
 
         return view('admin.properties.singleProperty')->with(compact('property'));
+    }
+
+    public function togglePropertyIndex($slug = null) {
+        $property = Properties::where('slug', $slug)->first();
+        if($property->isIndex()) {
+            $property->status = Properties::ACTIVE;
+            $property->update();
+        } else {
+            $index = Properties::where('status', Properties::INDEX)->first();
+            if($index) {
+                $index->status = Properties::ACTIVE;
+                $index->update();
+            }
+
+            $property->status = Properties::INDEX;
+            $property->update();
+        }
+
+
+        return redirect()->back()->with('success', 'Successful');
     }
 }
