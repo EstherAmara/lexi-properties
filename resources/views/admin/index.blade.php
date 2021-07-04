@@ -2,11 +2,12 @@
 
 @section('content')
 
-    <section class="text-teal font-bold mt-10 text-center text-4xl">
+
+    <section class="font-bold px-8 py-2 text-teal-600 text-left text-xl" style="background-color: #F4EAE6">
         <p> Dashboard </p>
     </section>
 
-    <section class="mt-10">
+    <section class="mt-10 px-8">
         <div class="gap-10 grid grid-cols-3 text-center">
             <a href="{{ url('/admin/contacts') }}" class="contacts-box text-base">
                 <p class="mb-3 text-xl">{{ $numberOfContacts }}</p>
@@ -23,7 +24,7 @@
         </div>
     </section>
 
-    <section class="mt-20">
+    <section class="mt-20 px-8">
         <div class="gap-8 grid grid-cols-2">
             <div class="bg-white py-4 rounded table-container">
                 <div class="flex justify-between px-4">

@@ -69,9 +69,14 @@
             </nav>
         </header>
 
-        <main class="flex-1 p-8">
-            @include('layouts.alert')
-            @yield('content')
+        <main class="flex-1">
+            <div style="background-color: #2b5164" class="py-6">
+
+            </div>
+            <div>
+                @include('layouts.alert')
+                @yield('content')
+            </div>
         </main>
     </div>
 
