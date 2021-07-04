@@ -2,26 +2,99 @@
 
 @section('content')
 
+    <section class="text-teal font-bold mt-10 text-center text-4xl">
+        <p> Dashboard </p>
+    </section>
+
     <section class="mt-10">
         <div class="gap-10 grid grid-cols-3 text-center">
-            <a href="{{ url('/admin/contacts') }}" class="contacts-box text-lg">
-                <p class="mb-3">{{ $numberOfContacts }}</p>
-                <p> CONTACTS </p>
+            <a href="{{ url('/admin/contacts') }}" class="contacts-box text-base">
+                <p class="mb-3 text-xl">{{ $numberOfContacts }}</p>
+                <p> {{ $numberOfContacts === 1 ? 'CONTACT' : 'CONTACTS' }} </p>
             </a>
-            <a href="{{ url('/admin/inspections') }}" class="inspections-box text-lg">
-                <p class="mb-3">{{ $numberOfInspections }}</p>
-                <p> INSPECTIONS </p>
+            <a href="{{ url('/admin/inspections') }}" class="inspections-box text-base">
+                <p class="mb-3 text-xl">{{ $numberOfInspections }}</p>
+                <p> {{ $numberOfInspections === 1 ? 'INSPECTION' : 'INSPECTIONS' }} </p>
             </a>
-            <a href="{{ url('/admin/properties') }}" class="properties-box text-lg">
-                <p class="mb-3">{{ $numberOfProperties }}</p>
-                <p> PROPERTIES </p>
+            <a href="{{ url('/admin/properties') }}" class="properties-box text-base">
+                <p class="mb-3 text-xl">{{ $numberOfProperties }}</p>
+                <p> {{ $numberOfProperties === 1 ? 'PROPERTY' : 'PROPERTIES' }} </p>
             </a>
         </div>
     </section>
 
-    <section class="mt-10">
+    <section class="mt-20">
         <div class="gap-8 grid grid-cols-2">
+            <div class="bg-white py-4 rounded table-container">
+                <div class="flex justify-between px-4">
+                    <p class="font-semibold text-teal-600"> Recent Contacts </p>
+                    <a href="{{ url('/admin/contacts') }}" class="border border-teal-600 px-2 py-1 rounded-sm text-sm text-teal-600">See all</a>
+                </div>
+                <table class="mt-3 w-full text-left small-table text-sm">
+                    <thead class="font-semibold">
+                        <tr>
+                            <th>Name</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($contacts as $contact)
+                            <tr>
+                                <td> {{ $contact->name }} </td>
+                                <td> {{ $conact->message }} </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
 
+            <div class="bg-white py-4 rounded table-container">
+                <div class="flex justify-between px-4">
+                    <p class="font-semibold text-teal-600"> Recent Properties </p>
+                    <a href="{{ url('/admin/properties') }}" class="border border-teal-600 px-2 py-1 rounded-sm text-sm text-teal-600"> See all </a>
+                </div>
+                <table class="mt-3 w-full text-left small-table text-sm">
+                    <thead class="font-semibold">
+                        <tr>
+                            <th>Title</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($properties as $property)
+                            <tr>
+                                <td> {{ $property->title }} </td>
+                                <td> ₦{{ number_format($property->amount) }} </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-white py-4 rounded col-span-2 table-container">
+                <div class="flex justify-between px-4">
+                    <p class="font-semibold text-teal-600"> Recent Inspections </p>
+                    <a href="{{ url('/admin/inspections') }}" class="border border-teal-600 px-2 py-1 rounded-sm text-sm text-teal-600"> See all </a>
+                </div>
+                <table class="mt-3 small-table text-left text-sm w-full">
+                    <thead class="font-semibold">
+                        <th>Name</th>
+                        <th>Property</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </thead>
+                    <tbody>
+                        @foreach ($inspections as $inspection)
+                            <tr>
+                                <td> {{ $inspection->name }} </td>
+                                <td> {{ $inspection->property->title }} </td>
+                                <td> {{ Carbon\Carbon::create($inspection->date)->format('l jS \of F Y') }} </td>
+                                <td> {{ Carbon\Carbon::create($inspection->time)->format('h:i:s A') }} </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 

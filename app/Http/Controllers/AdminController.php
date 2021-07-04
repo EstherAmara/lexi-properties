@@ -17,7 +17,11 @@ class AdminController extends Controller
         $numberOfInspections = BookInspection::count();
         $numberOfProperties = Properties::count();
 
-        return view('admin.index')->with(compact('numberOfContacts', 'numberOfInspections', 'numberOfProperties'));
+        $contacts = Contacts::where('replied', 0)->orderBy('updated_at', 'DESC')->paginate(5);
+        $properties = Properties::orderBy('updated_at', 'DESC')->paginate(5);
+        $inspections = BookInspection::orderBy('updated_at', 'DESC')->paginate(5);
+
+        return view('admin.index')->with(compact('numberOfContacts', 'numberOfInspections', 'numberOfProperties', 'contacts', 'properties', 'inspections'));
     }
 
     public function contact() {
