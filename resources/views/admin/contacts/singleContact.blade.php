@@ -7,7 +7,7 @@
     </section>
 
     <section class="px-8">
-        <div class="bg-white border border-teal-100 mt-10 p-10 rounded">
+        <div class="bg-white border border-teal-100 mt-20 p-10 rounded">
             <div class="grid grid-cols-3 text-lg">
                 <div>
                     <p class="font-bold mb-2 text-base text-teal"> Name </p>

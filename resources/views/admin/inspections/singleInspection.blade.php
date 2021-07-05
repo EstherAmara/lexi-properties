@@ -7,7 +7,7 @@
     </section>
 
     <section class="px-8">
-        <div class="flex flex-col mt-10 sm:flex-row sm:space-x-10 sm:space-y-0 space-x-0 space-y-10">
+        <div class="flex flex-col mt-20 sm:flex-row sm:space-x-10 sm:space-y-0 space-x-0 space-y-10">
             <div class="w-1/3">
                 <div>
                     <img src="{{ asset($inspection->property->pictures) }}" alt="" class="border-2 border-teal-500 rounded-lg">

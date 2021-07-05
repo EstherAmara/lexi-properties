@@ -9,7 +9,7 @@
     <section class="px-8">
         <form action="" enctype="multipart/form-data" method="POST">
             @csrf
-            <div class="gap-0 grid grid-cols-1 md:gap-5 md:grid-cols-3 md:space-y-0 mt-10 space-y-8">
+            <div class="gap-0 grid grid-cols-1 md:gap-5 md:grid-cols-3 md:space-y-0 mt-20 space-y-8">
                 <div>
                     <label class="text-gray-600" for="title"> Title </label>
                     <input type="text" id="title" name="title" class="block border mt-2 px-5 py-3 rounded-lg text-sm w-full" value="{{ old('title') ?? $property->title }}">

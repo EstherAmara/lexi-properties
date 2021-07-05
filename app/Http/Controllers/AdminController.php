@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\BookInspection;
 use App\Models\Contacts;
 use App\Models\Properties;
+use App\Models\Settings;
 
 class AdminController extends Controller
 {
@@ -144,8 +145,8 @@ class AdminController extends Controller
     }
 
     public function personalInformation(Request $request) {
-
-        return view('admin.personal.personal');
+        $settings = Settings::first();
+        return view('admin.personal.personal')->with(compact('settings'));
     }
 
     public function properties() {
