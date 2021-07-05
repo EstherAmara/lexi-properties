@@ -2,14 +2,14 @@
 
 @section('content')
 
-    <section class="flex flex-col justify-between md:flex-row md:space-y-0 mt-10 space-y-8">
-        <p class="text-teal font-bold text-4xl"> All Properties</p>
-        <div>
-            <a href="{{ url('/admin/properties/new') }}" class="bg-teal-600 list px-5 py-2 rounded-3xl text-sm text-white"> List new property </a>
+    <section class="dark-ivory flex flex-col font-bold items-center justify-between md:flex-row md:space-y-0 px-8 py-2 text-teal-600 text-left text-xl space-y-8">
+        <p class="font-bold text-xl"> All Properties</p>
+        <div class="flex items-center">
+            <a href="{{ url('/admin/properties/new') }}" class="bg-teal-600 list px-4 py-2 rounded-3xl text-sm text-white"> List new property </a>
         </div>
     </section>
 
-    <section class="gap-8 grid grid-cols-1 lg:grid-cols-3 lg:gap-5 md:gap-4 md:grid-cols-2 mt-20 xl:grid-cols-4">
+    <section class="gap-8 grid grid-cols-1 lg:grid-cols-3 lg:gap-5 md:gap-4 md:grid-cols-2 mt-20 px-8 xl:grid-cols-4">
         @foreach ($allProperties as $property)
             <div class="bg-white box-shadow">
                 <a href="{{ url('/admin/properties/'.$property->slug) }}">

@@ -2,8 +2,11 @@
 
 @section('content')
 
-    <section>
-        <p class="font-bold text-teal text-3xl"> Inspection for <a class="underline" href="{{ url('/admin/properties/'.$inspection->property->slug) }}">{{ $inspection->property->title }}</a> </p>
+    <section class="dark-ivory font-bold px-8 py-2 text-teal-600 text-left text-xl">
+        <p> Inspection for <a class="underline" href="{{ url('/admin/properties/'.$inspection->property->slug) }}">{{ $inspection->property->title }}</a> </p>
+    </section>
+
+    <section class="px-8">
         <div class="flex flex-col mt-10 sm:flex-row sm:space-x-10 sm:space-y-0 space-x-0 space-y-10">
             <div class="w-1/3">
                 <div>

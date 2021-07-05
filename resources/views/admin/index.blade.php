@@ -3,21 +3,21 @@
 @section('content')
 
 
-    <section class="font-bold px-8 py-2 text-teal-600 text-left text-xl" style="background-color: #F4EAE6">
+    <section class="dark-ivory font-bold px-8 py-2 text-teal-600 text-left text-xl">
         <p> Dashboard </p>
     </section>
 
     <section class="mt-10 px-8">
         <div class="gap-10 grid grid-cols-3 text-center">
-            <a href="{{ url('/admin/contacts') }}" class="contacts-box text-base">
+            <a href="{{ url('/admin/contacts') }}" class="box-contacts text-base">
                 <p class="mb-3 text-xl">{{ $numberOfContacts }}</p>
                 <p> {{ $numberOfContacts === 1 ? 'CONTACT' : 'CONTACTS' }} </p>
             </a>
-            <a href="{{ url('/admin/inspections') }}" class="inspections-box text-base">
+            <a href="{{ url('/admin/inspections') }}" class="box-inspections text-base">
                 <p class="mb-3 text-xl">{{ $numberOfInspections }}</p>
                 <p> {{ $numberOfInspections === 1 ? 'INSPECTION' : 'INSPECTIONS' }} </p>
             </a>
-            <a href="{{ url('/admin/properties') }}" class="properties-box text-base">
+            <a href="{{ url('/admin/properties') }}" class="box-properties text-base">
                 <p class="mb-3 text-xl">{{ $numberOfProperties }}</p>
                 <p> {{ $numberOfProperties === 1 ? 'PROPERTY' : 'PROPERTIES' }} </p>
             </a>
@@ -42,7 +42,7 @@
                         @foreach ($contacts as $contact)
                             <tr>
                                 <td> {{ $contact->name }} </td>
-                                <td> {{ $conact->message }} </td>
+                                <td> {{ $contact->message }} </td>
                             </tr>
                         @endforeach
                     </tbody>

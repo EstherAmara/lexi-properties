@@ -61,6 +61,9 @@
 
                 <a href="{{ url('/admin/inspections') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('inspections')){{ 'active' }}@endif"> Inspections </a>
 
+                <a href="{{ url('/admin/personal-information') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('personal-information')){{ 'active' }}@endif"> Personal Information </a>
+
+
                 {{-- <a href="{{ url('/') }}" class="p-4 rounded @if(Request::is('/')){{'active'}}@endif"> Home </a>
 
                 <a href="" class="p-4 rounded"> Land Banking Investment </a> --}}
@@ -70,7 +73,7 @@
         </header>
 
         <main class="flex-1">
-            <div style="background-color: #2b5164" class="py-6">
+            <div  class="misty-blue py-6">
 
             </div>
             <div>

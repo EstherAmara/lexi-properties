@@ -49,3 +49,5 @@ Route::get('/admin/properties/{slug}', [AdminController::class, 'singleProperty'
 Route::get('/admin/inspections', [AdminController::class, 'inspections']);
 Route::get('/admin/inspections/{id}/single', [AdminController::class, 'singleInspection']);
 
+Route::get('/admin/personal-information', [AdminController::class, 'personalInformation']);
+

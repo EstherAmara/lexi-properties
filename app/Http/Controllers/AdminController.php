@@ -17,7 +17,7 @@ class AdminController extends Controller
         $numberOfInspections = BookInspection::count();
         $numberOfProperties = Properties::count();
 
-        $contacts = Contacts::where('replied', 0)->orderBy('updated_at', 'DESC')->paginate(5);
+        $contacts = Contacts::orderBy('replied', 'DESC')->paginate(5);
         $properties = Properties::orderBy('updated_at', 'DESC')->paginate(5);
         $inspections = BookInspection::orderBy('updated_at', 'DESC')->paginate(5);
 
@@ -141,6 +141,11 @@ class AdminController extends Controller
         }
 
         return view('admin.properties.newProperties');
+    }
+
+    public function personalInformation(Request $request) {
+
+        return view('admin.personal.personal');
     }
 
     public function properties() {
