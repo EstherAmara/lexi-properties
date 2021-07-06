@@ -75,9 +75,18 @@
             <div class="bg-ivory py-7">
                 <div class="flex flex-col justify-between md:flex-row md:space-y-0 mx-auto space-y-5 w-2/3">
                     <div class="flex justify-center text-lg text-gray-200 space-x-5">
-                        <i class="border fa fa-facebook flex h-8 items-center justify-center rounded-full text-center w-8"></i>
-                        <i class="border fa fa-twitter flex h-8 items-center justify-center rounded-full text-center w-8"></i>
-                        <i class="border fa fa-instagram flex h-8 items-center justify-center rounded-full text-center w-8"></i>
+                        <a href="{{ $settings->facebook ?? '#' }}" title="Facebook">
+                            <i class="border fa fa-facebook flex h-8 items-center justify-center rounded-full text-center w-8"></i>
+                        </a>
+                        <a href="{{ $settings->instagram ?? '#' }}" title="Instagram">
+                            <i class="border fa fa-instagram flex h-8 items-center justify-center rounded-full text-center w-8"></i>
+                        </a>
+                        <a href="{{ $settings->youtube ?? '#' }}" title="YouTube">
+                            <i class="border fa fa-youtube flex h-8 items-center justify-center rounded-full text-center w-8"></i>
+                        </a>
+                        <a href="{{ $settings->twitter ?? '#' }}" title="Twitter">
+                            <i class="border fa fa-twitter flex h-8 items-center justify-center rounded-full text-center w-8"></i>
+                        </a>
                     </div>
                     <div>
                         <form action="{{ url('/search') }}" class="" method="POST">
@@ -96,7 +105,7 @@
             </div>
 
             <div class="bg-misty-blue py-20 text-center text-md">
-                <p class="text-white"> Lexi Properties, Lagos State, Nigeria </p>
+                <p class="text-white"> {{ $settings->address ?? '' }} </p>
                 <p class="flex flex-col md:flex-row md:justify-center md:space-y-0 mt-3 space-y-2 text-white">
                     <span> &copy; {{ now()->year }} | All rights reserved | </span>
                     <span> &nbsp;Designed with &hearts; by Esthere </span>

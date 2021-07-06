@@ -61,7 +61,7 @@
 
                 <a href="{{ url('/admin/inspections') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('inspections')){{ 'active' }}@endif"> Inspections </a>
 
-                <a href="{{ url('/admin/personal-information') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('personal-information')){{ 'active' }}@endif"> Personal Information </a>
+                <a href="{{ url('/admin/settings') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('settings')){{ 'active' }}@endif"> Settings </a>
 
 
                 {{-- <a href="{{ url('/') }}" class="p-4 rounded @if(Request::is('/')){{'active'}}@endif"> Home </a>

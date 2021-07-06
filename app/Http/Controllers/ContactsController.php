@@ -7,12 +7,20 @@ use Illuminate\Http\Request;
 use Log;
 
 use App\Models\Contacts;
+use App\Models\Settings;
 
 class ContactsController extends Controller
 {
 
     public function index() {
-        return view('home.contact');
+        $settings = Settings::first();
+        if($settings->whatsapp[0] === 2) {
+            $whatsapp = $settings->whatsapp;
+        } else {
+            $whatsapp = substr_replace($settings->whatsapp, '234', 0, 1);
+        }
+
+        return view('home.contact')->with(compact('settings', 'whatsapp'));
     }
 
     public function submitContactForm(Request $request) {

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Models\BookInspection;
 use App\Models\Properties;
+use App\Models\Settings;
 
 class HomeController extends Controller
 {
@@ -26,11 +27,20 @@ class HomeController extends Controller
         $allProperties = Properties::latest()->paginate(9);
         $indexProperty = Properties::where('status', Properties::INDEX)->first();
 
-        return view('home')->with(compact('allProperties', 'indexProperty'));
+        $settings = Settings::first();
+        if($settings->whatsapp[0] === 2) {
+            $whatsapp = $settings->whatsapp;
+        } else {
+            $whatsapp = substr_replace($settings->whatsapp, '234', 0, 1);
+        }
+
+        return view('home')->with(compact('allProperties', 'indexProperty', 'settings', 'whatsapp'));
     }
 
     public function about() {
-        return view('home.about');
+        $settings = Settings::first();
+
+        return view('home.about')->with(compact('settings'));
     }
 
     public function landBankingInvestment() {

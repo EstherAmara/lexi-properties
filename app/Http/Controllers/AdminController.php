@@ -144,11 +144,6 @@ class AdminController extends Controller
         return view('admin.properties.newProperties');
     }
 
-    public function personalInformation(Request $request) {
-        $settings = Settings::first();
-        return view('admin.personal.personal')->with(compact('settings'));
-    }
-
     public function properties() {
         $allProperties = Properties::latest()->get();
         return view('admin.properties.properties')->with(compact('allProperties'));
@@ -162,6 +157,65 @@ class AdminController extends Controller
         $contact->update();
 
         return redirect()->back()->with('success', 'You\'ve successfully replied this contact');
+    }
+
+    public function settings(Request $request) {
+        $settings = Settings::first();
+        if($request->ismethod('post')) {
+            if($settings) {
+
+                $settings->about_first = $request->about_first ?? null;
+                $settings->about_second = $request->about_second ?? null;
+                $settings->agents_note = $request->agent_note ?? null;
+                $settings->email = $request->email ?? null;
+                $settings->phone = $request->phone ?? null;
+                $settings->whatsapp = $request->whatsapp ?? null;
+                $settings->twitter = $request->twitter ?? null;
+                $settings->instagram = $request->instagram ?? null;
+                $settings->facebook = $request->facebook ?? null;
+                $settings->youtube = $request->youtube ?? null;
+                $settings->address = $request->address ?? null;
+
+                if($request->image) {
+                    $image = $request->file('image');
+                    $name = Str::slug($request->image).'_'.time();
+                    $filePath = '/assets/images/settings/';
+                    $file = $name. '.' . $image->getClientOriginalExtension();
+                    $image->move(public_path($filePath), $file);
+                    $settings->image = $filePath.$file;
+                }
+
+                $settings->update();
+            } else {
+                $settings = new Settings;
+
+                $settings->about_first = $request->about_first ?? null;
+                $settings->about_second = $request->about_second ?? null;
+                $settings->agents_note = $request->agent_note ?? null;
+                $settings->email = $request->email ?? null;
+                $settings->phone = $request->phone ?? null;
+                $settings->whatsapp = $request->whatsapp ?? null;
+                $settings->twitter = $request->twitter ?? null;
+                $settings->instagram = $request->instagram ?? null;
+                $settings->facebook = $request->facebook ?? null;
+                $settings->youtube = $request->youtube ?? null;
+                $settings->address = $request->address ?? null;
+
+                if($request->image) {
+                    $image = $request->file('image');
+                    $name = Str::slug($request->image).'_'.time();
+                    $filePath = '/assets/images/settings/';
+                    $file = $name. '.' . $image->getClientOriginalExtension();
+                    $image->move(public_path($filePath), $file);
+                    $settings->image = $filePath.$file;
+                }
+
+                $settings->save();
+            }
+
+            return redirect()->back()->with('success', 'You have successfully set your details');
+        }
+        return view('admin.personal.personal')->with(compact('settings'));
     }
 
     public function singleContact($contact_id = null) {

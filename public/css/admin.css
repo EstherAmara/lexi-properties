@@ -7,6 +7,9 @@
 .bg-ivory {
     background-color: #F4EAE6;
 }
+.bg-peachy {
+    background: linear-gradient(45deg, #e44a51, #f36831);
+}
 
 .box-contacts {
     background: linear-gradient(90deg, #4297A0, #0db27d);

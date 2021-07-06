@@ -18,16 +18,16 @@ class CreateSettingsTable extends Migration
 
             $table->longText('about_first')->nullable();
             $table->longText('about_second')->nullable();
-            $table->string('image');
-            $table->string('agents_note');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('whatsapp');
-            $table->string('twitter');
-            $table->string('instagram');
-            $table->string('youtube');
-            $table->string('facebook');
-            $table->string('address');
+            $table->string('image')->nullable();
+            $table->longText('agents_note')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('whatsapp')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('address')->nullable();
 
             $table->timestamps();
         });

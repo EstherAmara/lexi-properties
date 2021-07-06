@@ -9,8 +9,9 @@
         <div class="flex flex-col md:flex-row md:space-y-0 justify-center space-y-5 w-full">
             <div class="w-full md:w-1/3">
                 <p class="font-semibold text-4xl"> Send us a message</p>
-                <p class="my-5 text-md"> <i class="fa fa-envelope-o font-semibold pr-2"></i> lexi@properties.com </p>
-                <p class="text-md"> <i class="fa fa-whatsapp font-semibold pr-2"></i> 0900 000 000 </p>
+                <a href="mailto:{{ $settings->email }}" class="block my-5 text-md"> <i class="fa fa-envelope-o font-semibold pr-2"></i> {{ $settings->email ?? '' }} </a>
+                <p class="text-md"> <i class="fa fa-phone font-semibold pr-2"></i> {{ $settings->phone ?? ''}} </p>
+                <a href="https://wa.me/+{{ $whatsapp }}" class="block my-5 text-md"> <i class="fa fa-whatsapp font-semibold pr-2"></i> {{ $settings->whatsapp }} </a>
             </div>
             <div class="w-full md:w-2/3">
                 <div class="bg-green-200 font-semibold hidden inline-flex items-center mb-3 p-3 rounded space-x-5 text-center text-green-600 w-full" id="greenAlert">
