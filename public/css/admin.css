@@ -82,6 +82,16 @@
     font-family: 'Pattaya', sans-serif;
 }
 
+#result div {
+    height: 15rem;
+}
+#result div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .sidebar > a:hover {
     background-color: #eee;
 }

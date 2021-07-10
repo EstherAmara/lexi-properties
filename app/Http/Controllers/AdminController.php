@@ -93,6 +93,7 @@ class AdminController extends Controller
 
     public function newProperties(Request $request) {
         if($request->isMethod('post')) {
+            dd($request->pictures);
 
             $validatedData = Validator::make($request->all(), [
                 'address' => 'required',

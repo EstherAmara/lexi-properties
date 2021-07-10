@@ -22,6 +22,7 @@ class CreatePropertiesTable extends Migration
             $table->longText('description');
             $table->string('measurement');
             $table->longText('payment_plan');
+            $table->string('index_image');
             $table->string('pictures');
             $table->string('proximity');
             $table->string('slug');
@@ -29,6 +30,7 @@ class CreatePropertiesTable extends Migration
             $table->string('status')->default('active');
             $table->string('title');
             $table->string('topography');
+            $table->string('video')->nullable();
 
             $table->timestamps();
         });
