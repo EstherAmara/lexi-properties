@@ -93,7 +93,6 @@ class AdminController extends Controller
 
     public function newProperties(Request $request) {
         if($request->isMethod('post')) {
-            dd($request->pictures);
 
             $validatedData = Validator::make($request->all(), [
                 'address' => 'required',
@@ -130,13 +129,32 @@ class AdminController extends Controller
             $property->title = $request->title;
             $property->topography = $request->topography;
 
-            $image = $request->file('pictures');
-            $name = Str::slug($request->pictures).'_'.time();
+            $indexPicture = $request->index;
+            $indexName = Str::slug($request->index).'_'.time();
             $filePath = '/assets/images/uploads/';
-            $file = $name. '.' . $image->getClientOriginalExtension();
-            $image->move(public_path($filePath), $file);
-            $property->pictures = $filePath.$file;
+            $file = $indexName. '.' . $indexPicture->getClientOriginalExtension();
+            $indexPicture->move(public_path($filePath), $file);
+            $indexPicture = $filePath.$file;
+            $property->index_image = $indexPicture;
 
+            $video = $request->video;
+            $videoName = Str::slug($request->video).'_'.time();
+            $filePath = '/assets/videos/uploads/';
+            $file = $videoName . '.' . $video->getClientOriginalExtension();
+            $video->move(public_path($filePath), $file);
+            $video = $filePath.$file;
+            $property->video = $video;
+
+            foreach($request->pictures as $picture) {
+                $image = $picture;
+                $name = Str::slug($picture).'_'.time();
+                $filePath = '/assets/images/uploads/';
+                $file = $name. '.' . $image->getClientOriginalExtension();
+                $image->move(public_path($filePath), $file);
+                $allPictures[] = $filePath.$file;
+            }
+            $pictures = implode($allPictures, ',');
+            $property->pictures = $pictures;
             $property->save();
 
             return redirect('/admin/properties')->with('success', 'New property listed');
