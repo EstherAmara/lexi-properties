@@ -7,8 +7,8 @@
     </section>
 
     <section class="mx-auto my-24 lg:w-2/3 w-10/12">
-        <div class="flex space-x-5">
-            <div class="agent-note flex flex-col space-y-5 w-2/3">
+        <div class="flex flex-col-reverse md:flex-row md:space-y-0 md:space-x-5 space-y-5 space-y-reverse">
+            <div class="agent-note flex flex-col space-y-5 md:w-2/3 w-full">
                 <div>
                     {{ $settings->about_first ?? '' }}
                 </div>
@@ -16,7 +16,7 @@
                     {{ $settings->about_second ?? '' }}
                 </div>
             </div>
-            <div class="max-h-96 w-1/3">
+            <div class="md:max-h-96 max-h-84 md:w-1/3">
                 <img src="{{ asset($settings->image ?? '#') }}" alt="" class="h-full object-center object-cover w-full">
             </div>
         </div>
