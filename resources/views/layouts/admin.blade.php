@@ -35,7 +35,7 @@
     <div class="lg:flex min-h-screen relative">
 
         {{-- mobile menu bar --}}
-        <div class="bg-dark flex justify-between lg:hidden px-10 pt-7 relative text-teal">
+        <div class="bg-dark flex justify-between lg:hidden md:px-10 px-5 pt-7 relative text-teal">
             {{-- logo --}}
             <div class="lg:w-24 my-auto w-1/6">
                 <span class="mb-8 mt-3 self-center"><a href="{{ url('/') }}" class="pattaya text-teal text-2xl">

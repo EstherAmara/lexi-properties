@@ -2,18 +2,18 @@
 
 @section('content')
 
-    <section class="dark-ivory font-bold px-8 py-2 text-teal-600 text-left text-xl">
+    <section class="dark-ivory font-bold md:px-10 px-5 py-2 text-teal-600 text-left text-xl">
         <p> Inspection for <a class="underline" href="{{ url('/admin/properties/'.$inspection->property->slug) }}">{{ $inspection->property->title }}</a> </p>
     </section>
 
-    <section class="px-8">
+    <section class="md:px-10 px-5">
         <div class="flex flex-col mt-20 sm:flex-row sm:space-x-10 sm:space-y-0 space-x-0 space-y-10">
-            <div class="w-1/3">
+            <div class="md:w-1/3 w-full">
                 <div>
                     <img src="{{ asset($inspection->property->pictures) }}" alt="" class="border-2 border-teal-500 rounded-lg">
                 </div>
             </div>
-            <div class="w-2/3">
+            <div class="md:w-2/3 w-full">
                 <div class="contains">
                     <div class="flex justify-between">
                         <p> Name </p>

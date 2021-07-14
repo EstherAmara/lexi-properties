@@ -8,7 +8,7 @@
     </section>
 
     <section class="mt-10 px-8">
-        <div class="gap-10 grid grid-cols-3 text-center">
+        <div class="gap-10 grid grid-cols-1 md:grid-cols-3 text-center">
             <a href="{{ url('/admin/contacts') }}" class="box-contacts text-base">
                 <p class="mb-3 text-xl">{{ $numberOfContacts }}</p>
                 <p> {{ $numberOfContacts === 1 ? 'CONTACT' : 'CONTACTS' }} </p>
@@ -25,7 +25,7 @@
     </section>
 
     <section class="mt-20 px-8">
-        <div class="gap-8 grid grid-cols-2">
+        <div class="gap-8 grid grid-cols-1 md:grid-cols-2">
             <div class="bg-white py-4 rounded table-container">
                 <div class="flex justify-between px-4">
                     <p class="font-semibold text-teal-600"> Recent Contacts </p>
@@ -72,7 +72,7 @@
                 </table>
             </div>
 
-            <div class="bg-white py-4 rounded col-span-2 table-container">
+            <div class="bg-white py-4 rounded md:col-span-2 table-container">
                 <div class="flex justify-between px-4">
                     <p class="font-semibold text-teal-600"> Recent Inspections </p>
                     <a href="{{ url('/admin/inspections') }}" class="border border-teal-600 px-2 py-1 rounded-sm text-sm text-teal-600"> See all </a>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="dark-ivory flex flex-col font-bold items-center justify-between md:flex-row md:space-y-0 px-8 py-2 space-y-8 text-teal-600 text-left text-xl">
+    <section class="dark-ivory flex flex-col font-bold items-center justify-between md:flex-row md:px-10 md:space-y-0 px-5 py-2 space-y-4 text-teal-600 text-left text-xl">
         <p> {{ $property->title }} </p>
         <div class="flex items-center space-x-5">
             <a href="{{ url('/admin/properties/'.$property->slug.'/index') }}" class="bg-white border border-teal-600 px-4 py-2 rounded-3xl text-center text-sm text-teal-600">
@@ -12,7 +12,7 @@
         </div>
     </section>
 
-    <section class="my-24 px-8">
+    <section class="my-24 md:px-10 px-5">
         <div>
             <p class="about font-bold mb-2 text-2xl text-teal-700 relative"> About this property </p>
             <hr class="border border-yellow-200 hrr mt-4 w-52" />
@@ -23,7 +23,7 @@
         </p>
     </section>
 
-    <section class="my-24 px-8">
+    <section class="my-24 md:px-10 px-5">
         <div class="font-medium gap-5 grid grid-cols-1 md:grid-cols-3 text-lg text-gray-500">
             <div class="border-l border-r flex items-center md:justify-center md:border-r-0 px-3 space-x-3">
                 <span class="font-semibold text-teal-500 text-2xl">₦</span>
@@ -43,11 +43,11 @@
         </div>
     </section>
 
-    <section class="my-24 px-8">
+    <section class="my-24 md:px-10 px-5">
         <img src="{{ asset($property->pictures) }}" alt="" class="max-h-screen object-cover w-full">
     </section>
 
-    <section class="my-24 px-8">
+    <section class="my-24 md:px-10 px-5">
         <div class="font-medium gap-5 grid grid-cols-1 md:grid-cols-2 text-lg text-gray-500">
             <div class="flex items-center justify-center px-3 space-x-3">
                 <p class="flex items-center space-x-1 text-teal-600">
@@ -70,7 +70,7 @@
         </div>
     </section>
 
-    <section class="my-24 px-8">
+    <section class="my-24 md:px-10 px-5">
         <div>
             <p class="about font-bold mb-2 text-3xl text-gray-700 relative"> Mortgage Plans </p>
             <hr class="border border-yellow-200 hrr mt-4 w-52" />

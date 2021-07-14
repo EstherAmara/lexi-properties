@@ -2,11 +2,11 @@
 
 @section('content')
 
-    <section class="dark-ivory font-bold px-8 py-2 text-teal-600 text-left text-xl">
+    <section class="dark-ivory font-bold md:px-10 px-5 py-2 text-teal-600 text-left text-xl">
         <p> Edit {{ $property->title }} </p>
     </section>
 
-    <section class="px-8">
+    <section class="md:px-10 px-5">
         <form action="" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="gap-0 grid grid-cols-1 md:gap-5 md:grid-cols-3 md:space-y-0 mt-20 space-y-8">

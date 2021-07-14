@@ -2,14 +2,14 @@
 
 @section('content')
 
-    <section class="dark-ivory font-bold px-8 py-2 text-teal-600 text-left text-xl">
+    <section class="dark-ivory font-bold md:px-10 px-5 py-2 text-teal-600 text-left text-xl">
         <p> Your Personal Information </p>
     </section>
 
-    <section class="px-8 mt-20">
+    <section class="md:px-10 mt-20">
         <form action="{{ url('/admin/settings') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="bg-white p-10">
+            <div class="bg-white p-8">
                 <p class="font-bold mb-5 text-2xl text-gray-700"> About Us page </p>
                 <div class="space-y-5">
                     <div>
@@ -45,7 +45,7 @@
 
             <div class="bg-white mt-20 p-10">
                 <p class="font-bold mb-5 text-2xl text-gray-700"> Media Information </p>
-                <div class="gap-5 grid grid-cols-3">
+                <div class="gap-5 grid grid-cols-1 md:grid-cols-3">
                     <div>
                         <label for="phone" class="text-gray-600"> Phone number </label>
                         <input type="text" name="phone" value="{{ old('phone') ?? ($settings ? $settings->phone : '') }}" class="bg-white block border mt-2 px-5 py-3 rounded-lg text-sm w-full">
@@ -101,7 +101,7 @@
                         @enderror
                     </div>
 
-                    <div class="col-span-2">
+                    <div class="md:col-span-2">
                         <label for="address" class="text-gray-600"> Work Address </label>
                         <input type="text" name="address" value="{{ old('address') ?? ($settings ? $settings->address : '') }}" class="bg-white block border mt-2 px-5 py-3 rounded-lg text-sm w-full">
                         @error('address')
@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-end mt-20 mb-32">
+            <div class="flex justify-end mt-20 mb-32 pr-8">
                 <input type="submit" value="Update Details" class="bg-peachy cursor-pointer font-semibold px-6 py-3 rounded text-md text-white">
             </div>
         </form>

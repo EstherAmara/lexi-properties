@@ -55,6 +55,9 @@
     background: rgba(43, 124, 124, 0.186);
     color: teal;
 }
+.contains div p {
+    text-align: right;
+}
 
 .dark-ivory {
     background-color: #ead8d1;
