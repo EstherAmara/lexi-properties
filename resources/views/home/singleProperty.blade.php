@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="bg-center bg-cover bg-no-repeat bg-t-black flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset($property->pictures) }}); height: 90vh;">
+    <section class="bg-center bg-cover bg-no-repeat bg-t-black flex h-96 items-center justify-center pt-12" style="background-image: url({{ asset($property->index_image) }}); height: 90vh;">
         <p class="font-semibold home text-center text-white bebas-neue"> {{ $property->title }} </p>
     </section>
 
@@ -140,7 +140,9 @@
                         </p>
                     @enderror
                 </div>
-                <input type="submit" value="Book" class="bg-peach cursor-pointer mt-4 py-2 px-8 rounded text-white">
+                <div>
+                    <input type="submit" value="Book" class="bg-peach cursor-pointer mt-4 py-2 px-8 rounded text-white">
+                </div>
             </form>
         </div>
     </section>

@@ -20,7 +20,7 @@
             @foreach ($allProperties as $property)
                 <div class="bg-white box-shadow">
                     <a href="{{ url('/properties/'.$property->slug) }}">
-                        <img src="{{ asset($property->pictures) }}" alt="" class="h-52 object-center object-cover rounded-br-full w-full">
+                        <img src="{{ asset($property->index_image) }}" alt="" class="h-52 object-center object-cover rounded-br-full w-full">
                         <div class="px-3 py-2 text-gray-600 text-xs">
                             <p class="text-sm font-bold"> {{ $property->title }} </p>
                             <p class="py-2.5"> <i class="fa fa-map-marker"></i> {{ $property->city }}, {{ $property->state }} </p>
