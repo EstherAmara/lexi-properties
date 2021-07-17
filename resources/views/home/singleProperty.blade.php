@@ -41,8 +41,15 @@
         </div>
     </section>
 
-    <section class="h-10/12 mx-auto my-24 lg:w-2/3 w-10/12">
-        <img src="{{ asset($property->pictures) }}" alt="" class="h-45 object-center object-cover w-full">
+    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
+        <div class="your-class">
+            @foreach ($allPictures as $picture)
+                <div class="h-screen">
+                    <img src="{{ asset($picture) }}" alt="" class="h-45 object-center object-cover w-full h-full">
+                </div>
+            @endforeach
+        </div>
+        {{-- <img src="{{ asset($property->pictures) }}" alt="" class="h-45 object-center object-cover w-full"> --}}
     </section>
 
     <section class="mx-auto my-24 lg:w-2/3 w-10/12">
@@ -148,6 +155,10 @@
     </section>
 
     <script>
-        document.getElementById('showBook').addEventListener('click', function(e) { document.getElementById('bookInspection').classList.toggle('hidden')})
+        document.getElementById('showBook').addEventListener('click', function(e) { document.getElementById('bookInspection').classList.toggle('hidden')});
+
+        $(document).ready(function(){
+            $('.your-class').slick();
+        });
     </script>
 @endsection

@@ -251,8 +251,9 @@ class AdminController extends Controller
 
     public function singleProperty($slug = null) {
         $property = Properties::where('slug', $slug)->first();
+        $allPictures = explode(',', $property->pictures);
 
-        return view('admin.properties.singleProperty')->with(compact('property'));
+        return view('admin.properties.singleProperty')->with(compact('allPictures', 'property'));
     }
 
     public function togglePropertyIndex($slug = null) {

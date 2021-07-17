@@ -40,6 +40,17 @@
     box-shadow: 1px 1px 6px 0px lightgrey;
 }
 
+.slick-prev {
+    left: -40px;
+}
+.slick-next {
+    right: -40px;
+}
+.slick-prev:before, .slick-next:before {
+    color: teal;
+    font-size: 29px;
+}
+
 .hver a {
     position: relative;
 }

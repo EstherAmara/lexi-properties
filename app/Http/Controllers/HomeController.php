@@ -55,8 +55,9 @@ class HomeController extends Controller
 
     public function singleProperty($slug) {
         $property = Properties::where('slug', $slug)->first();
+        $allPictures = explode(',', $property->pictures);
 
-        return view('home.singleProperty')->with(compact('property'));
+        return view('home.singleProperty')->with(compact('allPictures', 'property'));
     }
 
     public function bookInspection(Request $request, $id = null) {

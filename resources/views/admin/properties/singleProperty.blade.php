@@ -44,7 +44,14 @@
     </section>
 
     <section class="my-24 md:px-10 px-5">
-        <img src="{{ asset($property->pictures) }}" alt="" class="max-h-screen object-cover w-full">
+        {{-- <img src="{{ asset($property->pictures) }}" alt="" class="max-h-screen object-cover w-full"> --}}
+        <div class="your-class">
+            @foreach ($allPictures as $picture)
+                <div class="h-screen">
+                    <img src="{{ asset($picture) }}" alt="" class="max-h-screen object-cover w-full">
+                </div>
+            @endforeach
+        </div>
     </section>
 
     <section class="my-24 md:px-10 px-5">
