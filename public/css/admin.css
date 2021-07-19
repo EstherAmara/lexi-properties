@@ -99,6 +99,17 @@
     background-color: #eee;
 }
 
+.slick-prev {
+    left: -40px;
+}
+.slick-next {
+    right: -40px;
+}
+.slick-prev:before, .slick-next:before {
+    color: teal;
+    font-size: 29px;
+}
+
 table.dataTable.no-footer{
     /* border: 1px solid #dee2e6; */
     border-radius: 5px;

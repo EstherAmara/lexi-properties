@@ -43,15 +43,25 @@
         </div>
     </section>
 
-    <section class="my-24 md:px-10 px-5">
-        {{-- <img src="{{ asset($property->pictures) }}" alt="" class="max-h-screen object-cover w-full"> --}}
-        <div class="your-class">
+    {{-- <section class="mt-24 md:px-10 px-5 flex justify-center items-center">
+        <div class="class w-full" style="width: 60vw">
             @foreach ($allPictures as $picture)
                 <div class="h-screen">
-                    <img src="{{ asset($picture) }}" alt="" class="max-h-screen object-cover w-full">
+                    <img src="{{ asset($picture) }}" alt="" class="max-h-screen object-cover">
                 </div>
             @endforeach
         </div>
+    </section> --}}
+
+    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
+        <div class="class">
+            @foreach ($allPictures as $picture)
+                <div class="h-screen">
+                    <img src="{{ asset($picture) }}" alt="" class="h-45 object-center object-cover w-full h-full">
+                </div>
+            @endforeach
+        </div>
+        {{-- <img src="{{ asset($property->pictures) }}" alt="" class="h-45 object-center object-cover w-full"> --}}
     </section>
 
     <section class="my-24 md:px-10 px-5">
@@ -88,4 +98,9 @@
         </div>
     </section>
 
+    <script>
+        $(document).ready(function(){
+            $('.class').slick();
+        });
+    </script>
 @endsection

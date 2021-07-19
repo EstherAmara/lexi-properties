@@ -34,6 +34,10 @@ Route::post('/search', [SearchController::class, 'simpleSearch']);
 Route::post('/quick-search', [SearchController::class, 'quickSearch']);
 Route::get('/about', [HomeController::class, 'about']);
 
+Route::get('/test', function() {
+    return view('admin.properties.test');
+});
+
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 Route::get('/admin/contacts', [AdminController::class, 'contact']);

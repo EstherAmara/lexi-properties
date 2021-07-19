@@ -41,7 +41,16 @@
         </div>
     </section>
 
-    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
+        <section class="mt-24 md:px-10 px-5 flex justify-center items-center">
+        <div class="your-class w-full" style="width: 60vw">
+            @foreach ($allPictures as $picture)
+                <div class="h-screen">
+                    <img src="{{ asset($picture) }}" alt="" class="max-h-screen object-cover">
+                </div>
+            @endforeach
+        </div>
+
+    {{-- <section class="mx-auto my-24 lg:w-2/3 w-10/12">
         <div class="your-class">
             @foreach ($allPictures as $picture)
                 <div class="h-screen">
@@ -51,7 +60,6 @@
         </div>
         {{-- <img src="{{ asset($property->pictures) }}" alt="" class="h-45 object-center object-cover w-full"> --}}
     </section>
-
     <section class="mx-auto my-24 lg:w-2/3 w-10/12">
         <div class="font-medium gap-5 grid grid-cols-1 md:grid-cols-2 text-lg text-gray-500">
             <div class="flex items-center justify-center px-3 space-x-3">
