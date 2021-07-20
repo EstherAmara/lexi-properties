@@ -58,15 +58,17 @@
         </section>
     @endif
 
-    <section class="flex flex-col-reverse items-center justify-center lg:w-2/3 md:flex-row md:space-x-10 mx-auto my-32 space-x-0 w-10/12">
-        <div class="h-96">
-            <img src="{{ asset($settings->image ?? '#') }}" alt="" class="h-full object-center object-cover w-full">
-        </div>
-        <div>
-            <p class="bebas-neue mb-5 text-center text-5xl"> AGENT'S NOTE </p>
-            <p class="agent-note border-0 border-gray-800 lg:px-6 md:border-l md:px-6 px-0 py-10"> {{ $settings->agents_note ?? '' }} </p>
-        </div>
-    </section>
+    @if ($settings && $settings->agents_note)
+        <section class="flex flex-col-reverse items-center justify-center lg:w-2/3 md:flex-row md:space-x-10 mx-auto my-32 space-x-0 w-10/12">
+            <div class="h-96">
+                <img src="{{ asset($settings->image ?? '#') }}" alt="" class="h-full object-center object-cover w-full">
+            </div>
+            <div>
+                <p class="bebas-neue mb-5 text-center text-5xl"> AGENT'S NOTE </p>
+                <p class="agent-note border-0 border-gray-800 lg:px-6 md:border-l md:px-6 px-0 py-10"> {{ $settings->agents_note ?? '' }} </p>
+            </div>
+        </section>
+    @endif
 
     <section class="flex flex-col-reverse lg:w-2/3 md:flex-col md:space-y-0 mx-auto my-32 space-y-5 space-y-reverse w-10/12">
         <div class="flex justify-center md:justify-end mb-2">
@@ -95,9 +97,9 @@
         <div class="flex flex-col justify-center lg:flex-row lg:space-y-0 space-y-5 w-full">
             <div class="lg:w-1/3 w-full">
                 <p class="font-semibold text-4xl"> Send us a message</p>
-                <a href="mailto:{{ $settings->email }}" class="block my-5 text-md"> <i class="fa fa-envelope-o font-semibold pr-2"></i> {{ $settings->email ?? '' }} </a>
+                <a href="mailto:{{ $settings->email ?? '' }}" class="block my-5 text-md"> <i class="fa fa-envelope-o font-semibold pr-2"></i> {{ $settings->email ?? '' }} </a>
                 <p class="text-md"> <i class="fa fa-phone font-semibold pr-2"></i> {{ $settings->phone ?? ''}} </p>
-                <a href="https://wa.me/+{{ $whatsapp }}" class="block my-5 text-md"> <i class="fa fa-whatsapp font-semibold pr-2"></i> {{ $settings->whatsapp }} </a>
+                <a href="https://wa.me/+{{ $whatsapp }}" class="block my-5 text-md"> <i class="fa fa-whatsapp font-semibold pr-2"></i> {{ $settings->whatsapp ?? '' }} </a>
             </div>
             <div class="lg:w-2/3 w-full">
                 <div class="bg-green-200 font-semibold hidden inline-flex items-center justify-between mb-3 p-3 rounded space-x-5 text-center text-green-600" id="greenAlert">

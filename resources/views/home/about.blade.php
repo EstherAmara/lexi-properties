@@ -13,7 +13,9 @@
                 <div class="whitespace-pre-wrap">{{ $settings->about_second ?? '' }}</div>
             </div>
             <div class="md:max-h-96 max-h-84 md:w-1/3">
-                <img src="{{ asset($settings->image ?? '#') }}" alt="" class="h-full object-center object-cover w-full">
+                @if ($settings && $settings->image)
+                    <img src="{{ asset($settings->image) }}" alt="" class="h-full object-center object-cover w-full">
+                @endif
             </div>
         </div>
     </section>

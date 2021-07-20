@@ -26,12 +26,15 @@ class HomeController extends Controller
     public function index() {
         $allProperties = Properties::latest()->paginate(9);
         $indexProperty = Properties::where('status', Properties::INDEX)->first();
+        $whatsapp = '';
 
         $settings = Settings::first();
-        if($settings->whatsapp[0] === 2) {
-            $whatsapp = $settings->whatsapp;
-        } else {
-            $whatsapp = substr_replace($settings->whatsapp, '234', 0, 1);
+        if($settings) {
+            if($settings->whatsapp[0] === 2) {
+                $whatsapp = $settings->whatsapp;
+            } else {
+                $whatsapp = substr_replace($settings->whatsapp, '234', 0, 1);
+            }
         }
 
         return view('home')->with(compact('allProperties', 'indexProperty', 'settings', 'whatsapp'));
@@ -55,7 +58,10 @@ class HomeController extends Controller
 
     public function singleProperty($slug) {
         $property = Properties::where('slug', $slug)->first();
-        $allPictures = explode(',', $property->pictures);
+        $allPictures = [];
+        if($property) {
+            $allPictures = explode(',', $property->pictures);
+        }
 
         return view('home.singleProperty')->with(compact('allPictures', 'property'));
     }
