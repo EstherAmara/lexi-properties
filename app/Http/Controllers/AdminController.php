@@ -137,13 +137,15 @@ class AdminController extends Controller
             $indexPicture = $filePath.$file;
             $property->index_image = $indexPicture;
 
-            $video = $request->video;
-            $videoName = Str::slug($request->video).'_'.time();
-            $filePath = '/assets/videos/uploads/';
-            $file = $videoName . '.' . $video->getClientOriginalExtension();
-            $video->move(public_path($filePath), $file);
-            $video = $filePath.$file;
-            $property->video = $video;
+            if($request->video) {
+                $video = $request->video;
+                $videoName = Str::slug($request->video).'_'.time();
+                $filePath = '/assets/videos/uploads/';
+                $file = $videoName . '.' . $video->getClientOriginalExtension();
+                $video->move(public_path($filePath), $file);
+                $video = $filePath.$file;
+                $property->video = $video;
+            }
 
             foreach($request->pictures as $picture) {
                 $image = $picture;
