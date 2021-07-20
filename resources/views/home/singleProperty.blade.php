@@ -12,13 +12,11 @@
                 <hr class="border border-yellow-200 hrr mt-4 w-52" />
             </div>
             <div class="mb-10">
-                <a href="#bookInsection" id="scrollToBook" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </a>
+                <a href="#bookInspection" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </a>
             </div>
         </div>
 
-        <div class="leading-7 mt-9 text-gray-800 text-lg">
-            {{ $property->description }}
-        </p>
+        <div class="leading-7 mt-9 text-gray-800 text-lg whitespace-pre-wrap">{{ $property->description }}</p>
     </section>
 
     <section class="mx-auto my-24 lg:w-2/3 w-10/12">
@@ -41,7 +39,7 @@
         </div>
     </section>
 
-        <section class="mt-24 md:px-10 px-5 flex justify-center items-center">
+    <section class="mt-24 md:px-10 px-5 flex justify-center items-center">
         <div class="your-class w-full" style="width: 60vw">
             @foreach ($allPictures as $picture)
                 <div class="h-screen">
@@ -49,16 +47,6 @@
                 </div>
             @endforeach
         </div>
-
-    {{-- <section class="mx-auto my-24 lg:w-2/3 w-10/12">
-        <div class="your-class">
-            @foreach ($allPictures as $picture)
-                <div class="h-screen">
-                    <img src="{{ asset($picture) }}" alt="" class="h-45 object-center object-cover w-full h-full">
-                </div>
-            @endforeach
-        </div>
-        {{-- <img src="{{ asset($property->pictures) }}" alt="" class="h-45 object-center object-cover w-full"> --}}
     </section>
     <section class="mx-auto my-24 lg:w-2/3 w-10/12">
         <div class="font-medium gap-5 grid grid-cols-1 md:grid-cols-2 text-lg text-gray-500">
@@ -89,14 +77,15 @@
             <hr class="border border-yellow-200 hrr mt-4 w-52" />
         </div>
 
-        <div class="leading-7 mt-9 text-gray-800 text-lg">
-            {{ $property->payment_plan }}
-        </div>
+        <div class="leading-7 mt-9 text-gray-800 text-lg whitespace-pre-wrap">{{ $property->payment_plan }}</div>
+    </section>
 
-        <div class="mt-5">
-            <button id="showBook" class="bg-teal px-6 py-2 rounded text-white"> Book Inspection </button>
+    <section class="mx-auto my-24 lg:w-2/3 w-10/12" id="bookInspection">
+        <div>
+            <p class="about font-bold mb-2 text-3xl text-gray-700 relative"> Book Inspection </p>
+            <hr class="border border-yellow-200 hrr mt-4 w-52" />
         </div>
-        <div class="mt-5" id="bookInspection">
+        <div class="mt-5">
             <form action="{{ url('/properties/book-inspection/'.$property->id) }}" id="main" method="POST" class="flex flex-col space-y-3">
                 @csrf
                 <div>
@@ -163,7 +152,6 @@
     </section>
 
     <script>
-        document.getElementById('showBook').addEventListener('click', function(e) { document.getElementById('bookInspection').classList.toggle('hidden')});
 
         $(document).ready(function(){
             $('.your-class').slick();

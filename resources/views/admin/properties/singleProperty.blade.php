@@ -18,9 +18,7 @@
             <hr class="border border-yellow-200 hrr mt-4 w-52" />
         </div>
 
-        <div class="leading-7 mt-9 text-gray-800 text-lg">
-            {{ $property->description }}
-        </p>
+        <div class="leading-7 mt-9 text-gray-800 text-lg whitespace-pre-wrap">{{ $property->description }}</p>
     </section>
 
     <section class="my-24 md:px-10 px-5">
@@ -53,11 +51,11 @@
         </div>
     </section> --}}
 
-    <section class="mx-auto my-24 lg:w-2/3 w-10/12">
-        <div class="class">
+    <section class="mx-auto my-24">
+        <div class="class mx-auto" style="width: 65vw; height: 80vh">
             @foreach ($allPictures as $picture)
                 <div class="h-screen">
-                    <img src="{{ asset($picture) }}" alt="" class="h-45 object-center object-cover w-full h-full">
+                    <img src="{{ asset($picture) }}" alt="" class="h-45 object-center object-cover w-full" style="height: 80vh">
                 </div>
             @endforeach
         </div>
@@ -93,9 +91,7 @@
             <hr class="border border-yellow-200 hrr mt-4 w-52" />
         </div>
 
-        <div class="leading-7 mt-9 text-gray-800 text-lg">
-            {{ $property->payment_plan }}
-        </div>
+        <div class="leading-7 mt-9 text-gray-800 text-lg whitespace-pre-wrap">{{ $property->payment_plan }}</div>
     </section>
 
     <script>

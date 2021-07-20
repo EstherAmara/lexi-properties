@@ -25,7 +25,7 @@
 
         <!-- Styles -->
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
         <!-- Google Font -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
