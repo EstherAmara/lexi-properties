@@ -9,6 +9,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Title icon -->
+    <link rel="shortcut icon" href="{{ asset('/assets/images/lex.png') }}" type="image/x-icon">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery-slim.min.js') }}"></script>
