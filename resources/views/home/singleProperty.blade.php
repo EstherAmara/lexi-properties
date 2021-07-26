@@ -40,7 +40,7 @@
     </section>
 
     <section class="mt-24 md:px-10 px-5 flex justify-center items-center">
-        <div class="your-class w-full" style="width: 60vw">
+        <div class="your-class w-full bg-gray-200" style="width: 60vw">
             @foreach ($allPictures as $picture)
                 <div class="h-screen">
                     <img src="{{ asset($picture) }}" alt="" class="max-h-screen object-cover">
@@ -153,6 +153,9 @@
 
     <script>
 
+        $('#greenAlert').click( function(e) {
+            $('#greenAlert').addClass('hidden');
+        })
         $(document).ready(function(){
             $('.your-class').slick();
         });

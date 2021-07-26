@@ -10,7 +10,7 @@
         <div class="flex flex-col mt-20 sm:flex-row sm:space-x-10 sm:space-y-0 space-x-0 space-y-10">
             <div class="md:w-1/3 w-full">
                 <div>
-                    <img src="{{ asset($inspection->property->pictures) }}" alt="" class="border-2 border-teal-500 rounded-lg">
+                    <img src="{{ asset($inspection->property->index_image) }}" alt="" class="border-2 border-teal-500 rounded-lg">
                 </div>
             </div>
             <div class="md:w-2/3 w-full">
