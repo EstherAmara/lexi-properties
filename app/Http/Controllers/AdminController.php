@@ -11,6 +11,8 @@ use App\Models\Contacts;
 use App\Models\Properties;
 use App\Models\Settings;
 
+use Log;
+
 class AdminController extends Controller
 {
     public function index() {
