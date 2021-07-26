@@ -159,8 +159,9 @@ class AdminController extends Controller
                 $file = $name. '.' . $image->getClientOriginalExtension();
                 $image->move(public_path($filePath), $file);
                 $allPictures[] = $filePath.$file;
-                Log::info($allPictures);
             }
+
+            dd($allPictures);
             $pictures = implode($allPictures, ',');
             $property->pictures = $pictures;
             $property->save();
