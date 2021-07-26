@@ -106,6 +106,7 @@ class AdminController extends Controller
                 'state' => 'required',
                 'title' => 'required',
                 'topography' => 'required',
+
             ]);
 
             if($validatedData->fails()) {
@@ -147,6 +148,8 @@ class AdminController extends Controller
                 $property->video = $video;
             }
 
+            $allPictures = [];
+
             foreach($request->pictures as $picture) {
                 $image = $picture;
                 $name = Str::slug($picture).'_'.time();
@@ -154,6 +157,7 @@ class AdminController extends Controller
                 $file = $name. '.' . $image->getClientOriginalExtension();
                 $image->move(public_path($filePath), $file);
                 $allPictures[] = $filePath.$file;
+                Log::info($allPictures);
             }
             $pictures = implode($allPictures, ',');
             $property->pictures = $pictures;
