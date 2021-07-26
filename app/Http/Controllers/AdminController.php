@@ -161,8 +161,7 @@ class AdminController extends Controller
                 $allPictures[] = $filePath.$file;
             }
 
-            dd($allPictures);
-            $pictures = implode($allPictures, ',');
+            $pictures = implode(',', $allPictures);
             $property->pictures = $pictures;
             $property->save();
 
