@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Auth;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -20,9 +21,9 @@ class Admin
             Auth::guard()->logout();
             $request->session()->invalidate();
             $request->session()->regenerateToken();
-            return redirect('login')->with('errorAlert','You have to be an admin to continue');
+            return redirect('login')->with('error','You have to be an admin to continue');
         }
-        
+
         return $next($request);
     }
 }

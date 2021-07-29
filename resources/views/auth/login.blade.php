@@ -2,9 +2,9 @@
 
 @section('content')
 <main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
-    <div class="flex">
+    <div class="flex justify-center items-center">
         <div class="w-full">
-            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
+            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg pb-10">
 
                 <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Login') }}
@@ -45,7 +45,7 @@
                         @enderror
                     </div>
 
-                    <div class="flex items-center">
+                    {{-- <div class="flex items-center">
                         <label class="inline-flex items-center text-sm text-gray-700" for="remember">
                             <input type="checkbox" name="remember" id="remember" class="form-checkbox"
                                 {{ old('remember') ? 'checked' : '' }}>
@@ -58,7 +58,7 @@
                             {{ __('Forgot Your Password?') }}
                         </a>
                         @endif
-                    </div>
+                    </div> --}}
 
                     <div class="flex flex-wrap">
                         <button type="submit"
@@ -66,14 +66,14 @@
                             {{ __('Login') }}
                         </button>
 
-                        @if (Route::has('register'))
-                        <p class="w-full text-xs text-center text-gray-700 my-6 sm:text-sm sm:my-8">
-                            {{ __("Don't have an account?") }}
-                            <a class="text-blue-500 hover:text-blue-700 no-underline hover:underline" href="{{ route('register') }}">
-                                {{ __('Register') }}
-                            </a>
-                        </p>
-                        @endif
+                        {{-- @if (Route::has('register'))
+                            <p class="w-full text-xs text-center text-gray-700 my-6 sm:text-sm sm:my-8">
+                                {{ __("Don't have an account?") }}
+                                <a class="text-blue-500 hover:text-blue-700 no-underline hover:underline" href="{{ route('register') }}">
+                                    {{ __('Register') }}
+                                </a>
+                            </p>
+                        @endif --}}
                     </div>
                 </form>
 

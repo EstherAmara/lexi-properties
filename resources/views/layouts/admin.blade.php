@@ -73,12 +73,9 @@
 
                 <a href="{{ url('/admin/settings') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('settings')){{ 'active' }}@endif"> Settings </a>
 
-
-                {{-- <a href="{{ url('/') }}" class="p-4 rounded @if(Request::is('/')){{'active'}}@endif"> Home </a>
-
-                <a href="" class="p-4 rounded"> Land Banking Investment </a> --}}
-
                 <a href="{{ url('/admin/contacts') }}" class="p-4 rounded @if(Request::segment(2) == ('contacts')){{'active'}}@endif"> Contacts </a>
+
+                <a href="{{ url('/admin/logout') }}" class="hover:bg-gray-500 p-4 rounded @if (Request::segment(2) == ('logout')){{ 'active' }}@endif"> Logout </a>
             </nav>
         </header>
 
