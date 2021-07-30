@@ -133,6 +133,11 @@
                 <div>
                     <label for="video" class="text-gray-600"> Video </label>
                     <input type="file" name="video" id="video" class="bg-white block border mt-2 px-5 py-3 rounded-lg text-sm w-full" accept="video/mp4, video/x-m4v, video/*">
+                    @error('video')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                    @enderror
                 </div>
 
                 <div class="md:col-span-3">

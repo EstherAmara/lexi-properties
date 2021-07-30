@@ -1,0 +1,25 @@
+.bg-ivory {
+    background-color: #F4EAE6;
+}
+
+.bg-peachy {
+    background: linear-gradient(45deg, #e44a51, #f36831);
+}
+
+.bg-teal {
+    background: linear-gradient(90deg, #4297A0, #0db27d);
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: none;
+    /* border: none; */
+}
+
+.text-peach {
+    color: #f36831;
+}
+
+.text-teal {
+    color: teal;
+}

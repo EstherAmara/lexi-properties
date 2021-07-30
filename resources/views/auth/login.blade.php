@@ -6,7 +6,7 @@
         <div class="w-full">
             <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg pb-10">
 
-                <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+                <header class="font-semibold bg-ivory font-bold text-teal text-lg py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Login') }}
                 </header>
 
@@ -15,11 +15,11 @@
 
                     <div class="flex flex-wrap">
                         <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
-                            {{ __('E-Mail Address') }}:
+                            {{ __('Email Address') }}:
                         </label>
 
                         <input id="email" type="email"
-                            class="form-input w-full @error('email') border-red-500 @enderror" name="email"
+                            class="form-input py-3 w-full @error('email') border-red-500 @enderror" name="email"
                             value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                         @error('email')
@@ -35,7 +35,7 @@
                         </label>
 
                         <input id="password" type="password"
-                            class="form-input w-full @error('password') border-red-500 @enderror" name="password"
+                            class="form-input py-3 w-full @error('password') border-red-500 @enderror" name="password"
                             required>
 
                         @error('password')
@@ -62,7 +62,7 @@
 
                     <div class="flex flex-wrap">
                         <button type="submit"
-                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4">
+                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded text-base leading-normal no-underline text-gray-100 bg-teal hover:bg-blue-700 ">
                             {{ __('Login') }}
                         </button>
 

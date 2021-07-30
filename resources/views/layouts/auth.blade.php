@@ -28,6 +28,7 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
