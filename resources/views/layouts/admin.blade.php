@@ -49,7 +49,7 @@
             {{-- logo --}}
             <div class="lg:w-24 my-auto w-1/6">
                 <span class="mb-8 mt-3 self-center"><a href="{{ url('/') }}" class="pattaya text-teal text-2xl">
-                    CRL <br> Real Estate
+                    CRL Real<br> Estate
                 </a></span>
             </div>
             {{-- mobile side bar --}}
@@ -63,7 +63,7 @@
         <header class="bg-white duration-200 ease-in-out fixed inset-y-0 left-0 lg:relative lg:translate-x-0 px-7 py-7 sidebar space-y-6 text-sm transform transition w-64 z-40 -translate-x-full">
             <nav class="flex flex-1 flex-col font-bold h-screen sidebar space-y-2 text-gray-500">
                 <span class="mb-8 mt-3 self-center"><a href="{{ url('/') }}" class="font-normal pattaya text-teal text-4xl">
-                    CRL <br> Real Estate
+                    CRL Real<br> Estate
                 </a></span>
                 <a href="{{ url('/admin') }}" class="hover:bg-gray-200 p-4 rounded @if(Request::is('admin')){{'active'}} @endif"> Dashboard </a>
 
